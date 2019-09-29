@@ -1,0 +1,18 @@
+.form-control
+{
+  width: 70%;
+  margin-bottom: 20px;
+  border: none;
+  outline: none;
+  background: transparent;
+  border-bottom: 1px solid rgb(253, 102, 2);
+  font-size: 1em;
+  padding-bottom: 15px;
+}
+.form-control:focus {
+    box-shadow: none;
+}
+.padding {
+    padding: .5rem;
+    margin-bottom: .5rem;
+}
