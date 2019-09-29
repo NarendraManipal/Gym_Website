@@ -23,6 +23,13 @@ button[type="submit"] {
 }
 button[type="submit"]:hover {
   background: #00000000;
-  border: 2px solid rgb(224, 38, 38);
+  border: 2px solid #e02626;
   color: #e02626;
+}
+.modal-footer {
+    justify-content: center;
+}
+.modal-footer a {
+    text-decoration: none;
+    color: #ef5f0b
 }

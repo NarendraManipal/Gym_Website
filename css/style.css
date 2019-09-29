@@ -79,10 +79,6 @@ html, body {
   background: #00000000;
   border: 2px solid #e02626;
 }
-.btn-primary:focus, .btn-primary:active {
-  outline: none !important;
-  box-shadow: none !important;
-}
 .img-circle {
   border-radius: 50%;
   align-self: center;

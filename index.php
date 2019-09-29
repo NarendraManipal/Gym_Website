@@ -38,7 +38,7 @@
 							<a class="nav-link" href="#contact">Contact</a>
 						</li>
 						<li class="nav-item">
-							<button class="btn btn-primary" data-target="#login-modal" data-toggle="modal">Login</button>
+							<button class="btn btn-primary" data-target="#login-modal" data-toggle="modal">Join Us</button>
 						</li>
 					</ul>
 				</div>
@@ -68,6 +68,9 @@
 									</div>
 								</form>
 							</div>
+							<dev class="modal-footer">
+								<p>Already have an account?<a href="#">Sign In</a></p>
+							</dev>
 						</div>
 					</div>
 				</div>
