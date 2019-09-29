@@ -36,12 +36,23 @@
 							<a class="nav-link" href="#contact">Contact</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#login">Login</a>
+							<button class="btn btn-primary" data-target="#login-modal" data-toggle="modal">Login</button>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
+
+		<!-- login popup -->
+		<div class="modal" id="login-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h2 class="text-primary">Sign Up</h2>
+					</div>
+				</div>
+			</div>
+		</div>
 
 		<!-- image slider-->
 		<div id="slides" class="carousel slide" data-ride="carousel" data-interval="12000">
