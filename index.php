@@ -38,20 +38,68 @@
 							<a class="nav-link" href="#contact">Contact</a>
 						</li>
 						<li class="nav-item">
-							<button class="btn btn-primary" data-target="#login-modal" data-toggle="modal">Join Us</button>
+							<button class="btn btn-primary" data-target="#join-modal" data-toggle="modal">Join Us</button>
 						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 
-		<!-- login popup -->
+		<!-- Register modal -->
+		<div class="modal fade" id="join-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-header">
+								<h2>Sign Up<h2>
+								<button type="button" class="close" data-dismiss="modal"> &times; </button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-body">
+								<form action="" method="POST">
+									<div class="row">
+										<div class="col-xs-6">
+											<input class="form-control" type="text" name="firstname" value="" placeholder="Firstname" required>
+										</div>
+										<div class="col-xs-6">
+											<input class="form-control" type="text" name="lastname" value="" placeholder="Lastname" required>
+										</div>
+									</div>
+									<input class="form-control" type="phone" name="phoneno" value="" placeholder="Mobile Number" maxlength="10" required>
+									<input type="email" class="form-control" name="reg-email" value="" placeholder="Email" required>
+									<input type="text" class="form-control" name="address" value="" placeholder="Address" required>
+									<div class="row">
+										<div class="col-xs 6">
+											<input type="text" class="form-control" name="city" value="" placeholder="City" required>
+										</div>
+										<div class="col-xs 6">
+											<input type="number" class="form-control" name="pincode" value="" placeholder="Postal Code" minlength="6" required>
+										</div>
+									</div>
+									<button class="btn login-primary" type="submit" name="submit" value="Sign Up">Sign Up</button>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<p>Already have an account?<a href="#">Sign In</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- login modal -->
 		<div class="modal fade" id="login-modal">
 			<div class="modal-dialog modal-dialog-centered modal-sm">
 				<div class="modal-content">
 					<div class="row">
 						<div class="col-12">
 							<div class="modal-header">
+								<h2>Sign In<h2>
 								<button type="button" class="close" data-dismiss="modal"> &times; </button>
 							</div>
 						</div>
@@ -68,9 +116,6 @@
 									</div>
 								</form>
 							</div>
-							<dev class="modal-footer">
-								<p>Already have an account?<a href="#">Sign In</a></p>
-							</dev>
 						</div>
 					</div>
 				</div>
