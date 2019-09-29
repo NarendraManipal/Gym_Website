@@ -13,10 +13,10 @@ html, body {
   font-weight: 700;
   font-size: .9rem;
   letter-spacing: .1rem;
-  background-color: rgba(0, 0, 0, 0.5) !important;
+  background-color: #00000080 !important;
 }
 .navbar-brand h1 {
-	background: linear-gradient(to right, rgb(224, 38, 38) 0%, #ee892b 100%);
+	background: linear-gradient(to right, #e02626 0%, #ee892b 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
   font-size: 1.5em;
@@ -39,7 +39,7 @@ html, body {
 }
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .nav-link:hover {
-  color: rgba(228, 60, 60, 0.856) !important;
+  color: #e43c3cda !important;
 }
 .carousel-inner img {
   height: 100%;
@@ -71,13 +71,17 @@ html, body {
   font-size: 300%;
 }
 .btn-primary {
-  background: linear-gradient(to right, rgb(224, 38, 38) 0%, #ee892b 100%);
-  border: 2px solid rgb(231, 68, 68);
+  background: linear-gradient(to right, #e02626 0%, #ee892b 100%);
+  border: 2px solid #e74444;
   margin-left: .5rem;
 }
 .btn-primary:hover {
   background: #00000000;
-  border: 2px solid rgb(224, 38, 38);
+  border: 2px solid #e02626;
+}
+.btn-primary:focus, .btn-primary:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 .img-circle {
   border-radius: 50%;

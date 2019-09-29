@@ -46,26 +46,27 @@
 		</nav>
 
 		<!-- login popup -->
-		<div class="container-fluid">
-			<div class="row text-center">
-				<div class="col-12">
-					<div class="modal fade" id="login-modal">
-						<div class="modal-dialog">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h2 class="text-primary">Join Us</h2>
-									<button type="button" class="close" data-dismiss="modal"> &times; </button>
-								</div>
-								<div class="modal-body">
-									<form action="" method="POST">
-										<div class="form-group">
-											<input class="form-control padding" type="email" placeholder="Email or username" name="username" value="" maxlength="50" required><br>
-											<input class="form-control padding" id="showpassword" type="password" placeholder="password" name="password" value="" minlength="8" maxlength="15" required><br>
-											<input class="padding" type="checkbox" onclick="showPassword()"><label>Show Password</label><br>
-											<button class="btn btn-primary" type="submit" name="submit" value="Login">Login</button>
-										</div>
-									</form>
-								</div>
+		<div class="modal fade" id="login-modal">
+			<div class="modal-dialog modal-dialog-centered modal-sm">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal"> &times; </button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-body">
+								<form action="" method="POST">
+									<div class="form-group">
+										<input class="form-control" type="email" placeholder="Email or username" name="username" value="" maxlength="50" required><br>
+										<input class="form-control" id="showpassword" type="password" placeholder="password" name="password" value="" minlength="8" maxlength="15" required><br>
+										<input type="checkbox" onclick="showPassword()"><label>Show Password</label><br>
+										<button class="btn login-primary" type="submit" name="submit" value="Login">Login</button>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>

@@ -1,18 +1,28 @@
 .form-control
 {
-  width: 70%;
-  margin-bottom: 20px;
+  width: 100%;
+  margin-bottom: .5rem;
   border: none;
   outline: none;
   background: transparent;
-  border-bottom: 1px solid rgb(253, 102, 2);
+  border-bottom: 1px solid #fd6602;
   font-size: 1em;
-  padding-bottom: 15px;
+  padding-bottom: 1rem;
 }
 .form-control:focus {
     box-shadow: none;
 }
-.padding {
-    padding: .5rem;
-    margin-bottom: .5rem;
+input[type="checkbox"] {
+    margin-bottom: 2.5rem;
+}
+button[type="submit"] {
+  background: linear-gradient(to right, #e02626 0%, #ee892b 100%);
+  border: 2px solid #e74444;
+  margin-left: .5rem;
+  color: #ffffff;
+}
+button[type="submit"]:hover {
+  background: #00000000;
+  border: 2px solid rgb(224, 38, 38);
+  color: #e02626;
 }
