@@ -36,7 +36,7 @@
 							<a class="nav-link" href="#contact">Contact</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#join">Join Now</a>
+							<a class="nav-link" href="#login">Login</a>
 						</li>
 					</ul>
 				</div>
@@ -49,9 +49,6 @@
 				<li data-target="#slides" data-slide-to="0" class="active"></li>
 				<li data-target="#slides" data-slide-to="1"></li>
 				<li data-target="#slides" data-slide-to="2"></li>
-				<li data-target="#slides" data-slide-to="3"></li>
-				<li data-target="#slides" data-slide-to="4"></li>
-				<li data-target="#slides" data-slide-to="5"></li>
 			</ol>
 
 			<div class="carousel-inner">
