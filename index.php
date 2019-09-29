@@ -84,7 +84,7 @@
 								</form>
 							</div>
 							<div class="modal-footer">
-								<p>Already have an account?<a href="#">Sign In</a></p>
+								<p>Already have an account?<a href="#login-modal" data-toggle="modal" data-dismiss="modal">Sign In</a></p>
 							</div>
 						</div>
 					</div>
@@ -94,7 +94,7 @@
 
 		<!-- login modal -->
 		<div class="modal fade" id="login-modal">
-			<div class="modal-dialog modal-dialog-centered modal-sm">
+			<div class="modal-dialog modal-sm">
 				<div class="modal-content">
 					<div class="row">
 						<div class="col-12">
