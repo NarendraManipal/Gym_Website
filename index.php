@@ -69,8 +69,15 @@
 											<input class="form-control" type="text" name="lastname" value="" placeholder="Lastname" required>
 										</div>
 									</div>
+									<div class="row">
+										<div class="col-xs-6">
+											<input type="email" class="form-control" name="reg-email" value="" placeholder="Email" required>
+										</div>
+										<div class="col-xs-6">
+											<input type="password" class="form-control" name="reg-password" value="" placeholder="Password" minlength="8" maxlength="15" required>
+										</div>
+									</div>
 									<input class="form-control" type="phone" name="phoneno" value="" placeholder="Mobile Number" maxlength="10" required>
-									<input type="email" class="form-control" name="reg-email" value="" placeholder="Email" required>
 									<input type="text" class="form-control" name="address" value="" placeholder="Address" required>
 									<div class="row">
 										<div class="col-xs 6">

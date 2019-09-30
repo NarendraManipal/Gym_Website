@@ -33,3 +33,9 @@ button[type="submit"]:hover {
     text-decoration: none;
     color: #ef5f0b
 }
+.modal-header h2 {
+  background: linear-gradient(to right, #e02626 0%, #ee892b 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  text-shadow: none;
+}

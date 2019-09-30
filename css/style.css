@@ -57,7 +57,7 @@ html, body {
   height: .7rem;
   background-color: #404040;
 }
-.carousel-caption h1, h2, h3 {
+.carousel-caption > h1, h2, h3 {
   text-transform: uppercase;
   text-shadow: 1px 1px 10px #000;
 }
@@ -118,8 +118,8 @@ button:focus {
 
 /*services*/
 .display-4 {
-  font-size: 200%;
-  background: linear-gradient(to right, #ff0000 20%, #fa5103 100%);
+  font-size: 300%;
+  background: linear-gradient(to right, #e02626 0%, #ee892b 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
