@@ -100,9 +100,6 @@ footer {
   color: #d5d5d5;
   padding-top: 2rem;
 }
-.h1-color h1 {
-  color: #000;
-}
 hr.light {
   border-top: 1px solid #d5d5dd;
   width: 75%;
@@ -122,6 +119,20 @@ button:focus {
 /*services*/
 .display-4 {
   font-size: 200%;
+  background: linear-gradient(to right, #ff0000 20%, #fa5103 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.welcome {
+  padding-top: 2rem;
+  width: 75%;
+  margin: 0 auto;
+}
+.welcome hr {
+  border-top: 2px solid #b4b4b4;
+  width: 95%;
+  margin-top: .3rem;
+  margin-bottom: 1rem;
 }
 
 

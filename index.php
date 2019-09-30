@@ -159,8 +159,8 @@
 
 		<!-- services -->
 		<div class="container-fluid padding">
-			<div class="row text-center">
-				<div class="col-12 h1-color">
+			<div class="row welcome text-center">
+				<div class="col-12">
 					<h1 class="display-4">Services</h1>
 				</div>
 				<hr>
