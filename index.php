@@ -160,7 +160,7 @@
 		<!-- services -->
 		<div class="container-fluid padding">
 			<div class="row text-center">
-				<div class="col-12">
+				<div class="col-12 h1-color">
 					<h1 class="display-4">Services</h1>
 				</div>
 				<hr>
