@@ -202,7 +202,8 @@ button:focus {
     top: 40%;
   }
   .carousel-caption h1 {
-    font-size: 220%;
+    font-size: 230%;
+    margin-bottom: .2rem;
   }
   .carousel-caption h2 {
     font-size: 205%;

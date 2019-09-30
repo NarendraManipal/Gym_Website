@@ -19,7 +19,7 @@
 
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-center fixed-top">
 			<div class="container-fluid">
-				<a class="navbar-brand" href="#"><h1>Stone Gym</h1></a>
+				<a class="navbar-brand" href="#"><h1>Stone</h1></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResposive">
 					<span class="navbar-toggler-icon"></span>
 				</button>
