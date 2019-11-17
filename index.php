@@ -1,45 +1,46 @@
+<?php
+	include 'controllers/authController.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
+	<meta http-equiv="X-UA-COMPATIBLE" content="IE=EDGE">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Stone Gym</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<title>Stone Is For Everyone</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<!--AOS-->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+	<!--owl carousel-->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/login-box.css" rel="stylesheet">
+	<link href="css/others.css" rel="stylesheet">
 	<script src="js/func.js"></script>
 </head>
 <body data-spy="scroll" data-target="#navbarResposive">
-
+	
 	<div id="home">
 
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-center fixed-top">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#"><h1>Stone</h1></a>
+			<div class="container-fluid pl-5 pr-5">	
+				<a class="navbar-brand" href="index.php"><h1>STONE</h1></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResposive">
 					<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResposive">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item">
-							<a class="nav-link" href="#home">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#service">Services</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#about">About Us</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#contact">Contact</a>
-						</li>
-						<li class="nav-item">
-							<button class="btn btn-primary" data-target="#join-modal" data-toggle="modal">Join Us</button>
-						</li>
+						<li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
+						<li class="nav-item"><a href="#" class="nav-link">About</a></li>
+						<li class="nav-item"><a href="#" class="nav-link">Programs</a></li>
+						<li class="nav-item"><a href="#" class="nav-link">Trainers</a></li>
+						<li class="nav-item"><a href="pricing.php" class="nav-link">Pricing</a></li>
+						<li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
+	          			<li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
 					</ul>
 				</div>
 			</div>
@@ -71,10 +72,10 @@
 									</div>
 									<div class="row">
 										<div class="col-xs-6">
-											<input type="email" class="form-control" name="reg-email" value="" placeholder="Email" required>
+											<input type="email" class="form-control" name="email" value="" placeholder="Email" required>
 										</div>
 										<div class="col-xs-6">
-											<input type="password" class="form-control" name="reg-password" value="" placeholder="Password" minlength="8" maxlength="15" required>
+											<input type="password" class="form-control" name="password" value="" placeholder="Password" minlength="8" maxlength="15" required>
 										</div>
 									</div>
 									<input class="form-control" type="phone" name="phoneno" value="" placeholder="Mobile Number" maxlength="10" required>
@@ -84,10 +85,10 @@
 											<input type="text" class="form-control" name="city" value="" placeholder="City" required>
 										</div>
 										<div class="col-xs 6">
-											<input type="number" class="form-control" name="pincode" value="" placeholder="Postal Code" minlength="6" required>
+											<input type="number" class="form-control" name="postal_code" value="" placeholder="Postal Code" minlength="6" required>
 										</div>
 									</div>
-									<button class="btn login-primary" type="submit" name="submit" value="Sign Up">Sign Up</button>
+									<button class="btn login-primary" type="submit" name="signup-btn" value="signup">Sign Up</button>
 								</form>
 							</div>
 							<div class="modal-footer">
@@ -116,12 +117,15 @@
 							<div class="modal-body">
 								<form action="" method="POST">
 									<div class="form-group">
-										<input class="form-control" type="email" placeholder="Email or username" name="username" value="" maxlength="50" required><br>
+										<input class="form-control" type="email" placeholder="Email" name="username" value="" maxlength="50" required><br>
 										<input class="form-control" id="showpassword" type="password" placeholder="password" name="password" value="" minlength="8" maxlength="15" required><br>
 										<input type="checkbox" onclick="showPassword()"><label>Show Password</label><br>
-										<button class="btn login-primary" type="submit" name="submit" value="Login">Login</button>
+										<button class="btn login-primary" type="submit" name="login-btn" value="Login">Login</button>
 									</div>
 								</form>
+							</div>
+							<div class="modal-footer">
+								<p>Don't have an account?<a href="#join-modal" data-toggle="modal" data-dismiss="modal">Sign Up</a></p>
 							</div>
 						</div>
 					</div>
@@ -130,50 +134,457 @@
 		</div>
 
 		<!-- image slider-->
-		<div id="slides" class="carousel slide" data-ride="carousel" data-interval="12000">
+		<div class="carousel-inner black " align="center">
+			<div class="carousel-item active">
+				<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" width="100%">
+						<source src="video\fitness1.mp4" type="video/mp4">
+				</video>
+				<div class="overlay"></div>
+				<div class="carousel-caption mt-5 pt-md-5">
+					<h1 class="mb-3">Stone is for<span>Everyone</span></h3>
+					<h2 class="subheading text-center">Shape your body</h3>
+				</div>
+			</div>
+		</div>
+
+		<!--<div id="car_slides" class="carousel slide" data-ride="carousel" data-interval="12000">
 			<ol class="carousel-indicators">
-				<li data-target="#slides" data-slide-to="0" class="active"></li>
-				<li data-target="#slides" data-slide-to="1"></li>
-				<li data-target="#slides" data-slide-to="2"></li>
+				<li data-target="#car_slides" data-slide-to="0" class="active"></li>
+				<li data-target="#car_slides" data-slide-to="1"></li>
 			</ol>
 
 			<div class="carousel-inner">
 				<div class="carousel-item active">
-					<img src="img\img2.png">
-					<div class="carousel-caption">
-						<h2>FEEL</h2><h1>GOOD</h1><h3>BREATH</h3>
-						<a href="#service" class="btn btn-outline-light btn-lg">Services</a>
-						<a href="#about" class="btn btn-primary btn-lg">About Us</a>
+					<img src="img/bg_2.jpg">
+					<div class="overlay"></div>
+					<div class="carousel-caption mt-5 pt-md-5">
+						<h1 class="mb-5">Stone is for<span>Everyone</span></h3>
+						<h2 class="subheading text-center">Shape your body</h3>
 					</div>
 				</div>
 				<div class="carousel-item">
-					<img src="img\img5.png">
+					<img src="img/bg_1.jpg">
+					<div class="overlay"></div>
+					<div class="carousel-caption mt-5 pt-md-5">
+						<h1 class="mb-5">Stone<span>gym</span></h3>
+						<h2 class="subheading">get your body fit</h3>
+					</div>
 				</div>
-				<div class="carousel-item">
-					<img src="img\img4.png">
-				</div>
-
-				<a class="carousel-control-prev" href="#slides" role="button" data-slide="prev">
+				<a class="carousel-control-prev" href="#car_slides" role="button" data-slide="prev">
 					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 					<span class="sr-only">Previous</span>
 				</a>
-				<a class="carousel-control-next" href="#slides" role="button" data-slide="next">
+				<a class="carousel-control-next" href="#car_slides" role="button" data-slide="next">
 					<span class="carousel-control-next-icon" aria-hidden="true"></span>
 					<span class="sr-only">Next</span>
 				</a>
 			</div>
-		</div>
-
-		<!-- services -->
-		<div class="container-fluid padding">
-			<div class="row welcome text-center">
-				<div class="col-12">
-					<h1 class="display-4">Services</h1>
-				</div>
-				<hr>
-			</div>
-		</div>
+		</div>-->
 
 	</div>
+
+	<!--moto-->
+	<div class="container-fluid padding ">
+		<div class="row padding mx-md-5 my-md-5">
+			<div class="col-xs-12 col-md-6">
+				<div class="row">
+					<div class="col-12">
+						<img src="img/bg_1.jpg" class="card-img"></img>
+					</div>
+					<div class="row mx-1">
+						<div class="col-4">
+							<img src="img/program-1.jpg" class="card-img" height="100%"></img>
+						</div>
+						<div class="col-4">
+							<img src="img/program-2.jpg" class="card-img" height="100%"></img>
+						</div>
+						<div class="col-4">
+							<img src="img/program-3.jpg" class="card-img" height="100%"></img>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-6 heading-section" data-aos="fade-up">
+				<span>Welcome</span>
+				<h1 class="mt-2">Welcome To</h1>
+				<h1><span>Stone GYM</span></h1>
+				<p class="mt-5">Find motivation from training with others for an efficient and progressive workout. Offering interactive and energetic sessions, Freestyle™ Group Training incorporates the latest equipment and trained fitness staff. These classes are a great way to work the whole body and improve overall fitness.</p>
+				<?php if(!isset($_SESSION['id'])): ?>
+					<button class="btn btn-primary px-5 py-3 mt-md-2" data-target="#join-modal" data-toggle="modal">Join Us</button>
+				<?php endif; ?>
+				<?php if(isset($_SESSION['id'])): ?>
+					<a class="btn btn-secondary" href="index.php?logout=1"><?php echo "Welcome, ".$_SESSION['firstname']." ".$_SESSION['lastname']; ?></a>
+				<?php endif; ?>
+			</div>
+		</div>
+	</div>
+
+	<!--Sevices-->
+
+	<div class="container-fluid padding">
+		<div class="row padding">
+			<div class="col-12 heading-section text-center">
+				<span>SERVICES</span>
+			</div>
+			<div class="col-12 heading-section text-center">
+				<h1>Kick your <span>Feet</span> Up</h1>
+			</div>
+		</div>
+		<div class="row padding mx-md-5 my-md-5">
+			<div class="col-xs-12 col-md-3 services" data-aos="fade-up" data-aos-delay="100">
+				<div class="card">
+					<div class="icon">
+						<img class="card-img-top" src="img/icon/ruler.png" alt="">
+					</div>
+					<div class="card-body">
+						<h4 class="card-title"><p>CARDIO TRAINING</p></h4>
+						<p class="card-text text-center">Whether you want increased energy or reduced stress, cardio training helps you live a fitter life while strengthening your heart and lungs.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-3 services" data-aos="fade-up" data-aos-delay="200">
+				<div class="card">
+					<div class="icon">
+						<img class="card-img-top" src="img/icon/gym.png" alt="">
+					</div>
+					<div class="card-body">
+						<h4 class="card-title"><p>STRENGTH TRAINING</p></h4>
+						<p class="card-text text-center">Shape your body and burn fat with strength training. With the right equipment such as resistance machines and advice from our experts.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-3 services" data-aos="fade-up" data-aos-delay="300">
+				<div class="card">
+					<div class="icon">
+						<img class="card-img-top" src="img/icon/dish.png" alt="">
+					</div>
+					<div class="card-body">
+						<h4 class="card-title"><p>DIET</p></h4>
+						<p class="card-text text-center">Healthy eating is one of the best things you can do to prevent and control health problems such as heart disease.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-12 col-md-3 services" data-aos="fade-up" data-aos-delay="400">
+				<div class="card">
+					<div class="icon">
+						<img class="card-img-top" src="img/icon/waist.png" alt="">
+					</div>
+					<div class="card-body">
+						<h4 class="card-title"><p>ONE-TO-ONE TRAINING</p></h4>
+						<p class="card-text text-center">Tailored specifically around your individual fitness, one-to-one personal training ensures you get the most out of every workout.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Success stories-->
+	<div class="container-fluid padding">
+		<div class="row padding">
+			<div class="col-12 heading-section text-center mt-5">
+				<span>Testimonies</span>
+			</div>
+			<div class="col-12 heading-section text-center">
+				<h1>Successful Stories</h1>
+			</div>
+		</div>
+		<div class="row padding mx-md-5 my-md-5" data-aos="fade-up" data-aos-delay="100">
+			<div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class="img-fluid" src="img/person_1.jpg" alt="card image"></p>
+                                    <h4 class="card-title">Gabby Smith</h4>
+                                    <p class="card-text">Gabby is a Syatem Analyst and Software Engineer.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Gabby Smith</h4>
+                                    <p class="card-text">The PF staff is extremely friendly and helpful. I am always greeted with a smile and feel that the staff is happy to be there and help me with questions.</p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fab fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fab fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="img/person_2.jpg" alt="card image"></p>
+                                    <h4 class="card-title">Floyd Weather</h4>
+                                    <p class="card-text">Floyd is a CA and Social Activist.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">Floyd Weather</h4>
+                                    <p class="card-text">There are people there of every age, shape, size and fitness level.</p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fab fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fab fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+            <!-- Team member -->
+            <div class="col-xs-12 col-sm-6 col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="image-flip" ontouchstart="this.classList.toggle('hover');">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="img/person_3.jpg" alt="card image"></p>
+                                    <h4 class="card-title">James Dee</h4>
+                                    <p class="card-text">James is an Internet Enterprenuer and Public Speaker.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-title">James Dee</h4>
+                                    <p class="card-text">The best gym I have ever belonged to... not intimidating because it attracts so many different types!</p>
+                                    <ul class="list-inline">
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fab fa-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fab fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fab fa-skype"></i>
+                                            </a>
+                                        </li>
+                                        <li class="list-inline-item">
+                                            <a class="social-icon text-xs-center" target="_blank" href="#">
+                                                <i class="fab fa-google"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ./Team member -->
+		</div>
+	</div>
+
+	<!--Membership-->
+	<div class="container-fluid padding classes">
+		<div class="row padding">
+			<div class="col-12 heading-section text-center mt-5">
+				<span>GYM CLASSES</span>
+			</div>
+			<div class="col-12 heading-section text-center">
+				<h1>What You Get From <span>Stone</span> Membership</h1>
+			</div>
+		</div>
+		<div class="row padding">
+			<div class="col-12">
+				<div class="owl-carousel owl-theme">
+					<div class="item membership" data-aos="fade-up" data-aos-delay="100">
+						<img src="img/program-1.jpg" alt="">
+						<div class="text text-center">
+							<div class="desc">
+								<h3>Muscle Sculpe</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+					<div class="item membership" data-aos="fade-up" data-aos-delay="150">
+						<img src="img/program-2.jpg" alt="">
+						<div class="text text-center">
+							<div class="desc">
+								<h3>Fat Burn</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+					<div class="item membership" data-aos="fade-up" data-aos-delay="200">
+						<img src="img/program-3.jpg" alt="">
+						<div class="text text-center">
+							<div class="desc">
+								<h3>Cycling</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+					<div class="item membership" data-aos="fade-up" data-aos-delay="250">
+						<img src="img/program-4.jpg" alt="">
+						<div class="text text-center">
+							<div class="desc">
+								<h3>Pilates &amp; Stretching</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+					<div class="item membership" data-aos="fade-up" data-aos-delay="300">
+						<img src="img/program-5.jpg" alt="">
+						<div class="text text-center">
+							<div class="desc">
+								<h3>Boxing</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+					<div class="item membership" data-aos="fade-up" data-aos-delay="350">
+						<img src="img/program-1.jpg" alt="">
+						<div class="text text-center">
+							<div class="desc">
+								<h3>Muscle Sculpe</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+					<div class="item membership" data-aos="fade-up" data-aos-delay="400">
+						<img src="img/program-2.jpg" alt="">
+						<div class="text text-center">
+							<div class="desc">
+								<h3>Fat Burn</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+					<div class="item membership" data-aos="fade-up" data-aos-delay="450">
+						<img src="img/program-3.jpg" alt="">
+						<div class="text text-center">
+							<div class="desc">
+								<h3>Cycling</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+					<div class="item membership" data-aos="fade-up" data-aos-delay="500">
+						<img src="img/program-4.jpg" alt="">
+						<div class="text text-center">
+							<div class="desc">
+								<h3>Pilates &amp; Stretching</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+					<div class="item membership" data-aos="fade-up" data-aos-delay="550">
+						<img src="img/program-5.jpg" alt="">
+						<div class="text text-center">
+							<div class="desc">
+								<h3>Boxing</h3>
+								<p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- footer -->
+
+	<footer>
+		<div class="container-fluid padding">
+			<div class="row text-center">
+				<div class="col-md-4">
+					<a class="navbar-brand" href="#"><h1>Stone</h1></a>
+					<hr class="light">
+					<p>+91 9876543210</p>
+					<p>stone@gmail.com</p>
+					<p>Katpady</p>
+					<p>Udupi, Karnataka, 576101</p>
+				</div>
+				<div class="col-md-4">
+					<hr class="light">
+					<h5>Timings</h5>
+					<hr class="light">
+					<p>Monday: 4am - 10pm</p>
+					<p>Saturday: 5am - 8pm</p>
+					<p>Sunday: 5am - 1pm</p>
+				</div>
+				<div class="col-md-4">
+					<hr class="light">
+					<h5>Classes</h5>
+					<hr class="light">
+					<p>Yoga</p>
+					<p>Zumba</p>
+					<p>Fitness Classes</p>
+					<p>MMA</p>
+				</div>
+				<div class="col-12">
+					<hr class="light-100">
+					<h5>Copyright ©Stone gym 2019. All rights reserved</h5>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/animate.js"></script>
+
 </body>
 </html>

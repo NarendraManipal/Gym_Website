@@ -39,3 +39,6 @@ button[type="submit"]:hover {
 	-webkit-text-fill-color: transparent;
   text-shadow: none;
 }
+.close {
+  color: #e02626 !important;
+}
