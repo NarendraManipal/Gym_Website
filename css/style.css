@@ -56,16 +56,15 @@
     right: 0%;
     transform: translateY(-50%);
   }
-  .carousel-caption > h1 {
+  .carousel-caption > .carousel-h1 {
     text-transform: uppercase;
     font-size: 7vw;
     color: #fcd307;
     line-height: .9;
-    font-weight: normal;
     letter-spacing: 1px;
     font-weight: 900;
   }
-  .carousel-caption > h1 span {
+  .carousel-caption > .carousel-h1 .carousel-span {
     font-size: 16vw;
     display: block;
     -webkit-text-fill-color: transparent;
@@ -119,6 +118,9 @@
   }
   footer p {
     text-align: center;
+  }
+  .foo-text {
+    font-size: 1em !important;
   }
   hr.light {
     border-top: 1px solid #d5d5dd;

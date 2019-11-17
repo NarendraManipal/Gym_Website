@@ -34,7 +34,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResposive">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item active"><a href="#home" class="nav-link">Home</a></li>
+						<li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
 						<li class="nav-item"><a href="#" class="nav-link">About</a></li>
 						<li class="nav-item"><a href="#" class="nav-link">Programs</a></li>
 						<li class="nav-item"><a href="#" class="nav-link">Trainers</a></li>
@@ -139,9 +139,9 @@
 				<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" width="100%">
 						<source src="video\fitness1.mp4" type="video/mp4">
 				</video>
-				<div class="overlay"></div>
+				<div class="overlay-carousel"></div>
 				<div class="carousel-caption mt-5 pt-md-5">
-					<h1 class="mb-3">Stone is for<span>Everyone</span></h3>
+					<h1 class="mb-3 carousel-h1">Stone is for<span class="carousel-span">Everyone</span></h3>
 					<h2 class="subheading text-center">Shape your body</h3>
 				</div>
 			</div>
@@ -231,7 +231,7 @@
 			</div>
 		</div>
 		<div class="row padding mx-md-5 my-md-5">
-			<div class="col-xs-12 col-md-3 services" data-aos="fade-up" data-aos-delay="100">
+			<div class="col-xs-12 col-sm-6 col-md-3 services" data-aos="fade-up" data-aos-delay="100">
 				<div class="card">
 					<div class="icon">
 						<img class="card-img-top" src="img/icon/ruler.png" alt="">
@@ -242,7 +242,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-3 services" data-aos="fade-up" data-aos-delay="200">
+			<div class="col-xs-12 col-sm-6 col-md-3 services" data-aos="fade-up" data-aos-delay="200">
 				<div class="card">
 					<div class="icon">
 						<img class="card-img-top" src="img/icon/gym.png" alt="">
@@ -253,7 +253,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-3 services" data-aos="fade-up" data-aos-delay="300">
+			<div class="col-xs-12 col-sm-6 col-md-3 services" data-aos="fade-up" data-aos-delay="300">
 				<div class="card">
 					<div class="icon">
 						<img class="card-img-top" src="img/icon/dish.png" alt="">
@@ -264,7 +264,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-3 services" data-aos="fade-up" data-aos-delay="400">
+			<div class="col-xs-12 col-sm-6 col-md-3 services" data-aos="fade-up" data-aos-delay="400">
 				<div class="card">
 					<div class="icon">
 						<img class="card-img-top" src="img/icon/waist.png" alt="">
@@ -572,7 +572,7 @@
 				</div>
 				<div class="col-12">
 					<hr class="light-100">
-					<h5>Copyright ©Stone gym 2019. All rights reserved</h5>
+					<h2 class="foo-text">Copyright ©Stone gym 2019. All rights reserved</h2>
 				</div>
 			</div>
 		</div>

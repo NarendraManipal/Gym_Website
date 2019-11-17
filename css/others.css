@@ -44,7 +44,7 @@
 .subheading:before {
 	right: -10px; 
 }
-.overlay {
+.overlay-carousel {
 	position: absolute;
 	top: 0;
 	bottom: 0;
@@ -52,6 +52,15 @@
 	right: 0;
 	background: #000;
 	opacity: .6;
+}
+.overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: #000;
+	opacity: .5;
 }
 .heading-section > span,.heading-section h1{
   text-transform: uppercase;
@@ -341,6 +350,8 @@ img {
 	left: -10%;
 	transform: translateX(90%);
 }
+
+
 
   
 
