@@ -19,11 +19,99 @@
     <link rel="stylesheet" href="css/owl.theme.default.min.css">
     
     <link href="css/style.css" rel="stylesheet">
+    <link href="css/login-box.css" rel="stylesheet">
     <link href="css/others.css" rel="stylesheet">
     <link href="css/pricing.css" rel="stylesheet">
 
 </head>
 <body>
+
+    <!-- Register modal -->
+		<div class="modal fade" id="join-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-header">
+								<h2>Sign Up<h2>
+								<button type="button" class="close" data-dismiss="modal"> &times; </button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-body">
+								<form action="" method="POST">
+									<div class="row">
+										<div class="col-xs-6">
+											<input class="form-control" type="text" name="firstname" value="" placeholder="Firstname" required>
+										</div>
+										<div class="col-xs-6">
+											<input class="form-control" type="text" name="lastname" value="" placeholder="Lastname" required>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xs-6">
+											<input type="email" class="form-control" name="email" value="" placeholder="Email" required>
+										</div>
+										<div class="col-xs-6">
+											<input type="password" class="form-control" name="password" value="" placeholder="Password" minlength="8" maxlength="15" required>
+										</div>
+									</div>
+									<input class="form-control" type="phone" name="phoneno" value="" placeholder="Mobile Number" maxlength="10" required>
+									<input type="text" class="form-control" name="address" value="" placeholder="Address" required>
+									<div class="row">
+										<div class="col-xs 6">
+											<input type="text" class="form-control" name="city" value="" placeholder="City" required>
+										</div>
+										<div class="col-xs 6">
+											<input type="number" class="form-control" name="postal_code" value="" placeholder="Postal Code" minlength="6" required>
+										</div>
+									</div>
+									<button class="btn login-primary" type="submit" name="signup-btn" value="signup">Sign Up</button>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<p>Already have an account?<a href="#login-modal" data-toggle="modal" data-dismiss="modal">Sign In</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- login modal -->
+		<div class="modal fade" id="login-modal">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-header">
+								<h2>Sign In<h2>
+								<button type="button" class="close" data-dismiss="modal"> &times; </button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-body">
+								<form action="" method="POST">
+									<div class="form-group">
+										<input class="form-control" type="email" placeholder="Email" name="username" value="" maxlength="50" required><br>
+										<input class="form-control" id="showpassword" type="password" placeholder="password" name="password" value="" minlength="8" maxlength="15" required><br>
+										<input type="checkbox" onclick="showPassword()"><label>Show Password</label><br>
+										<button class="btn login-primary" type="submit" name="login-btn" value="Login">Login</button>
+									</div>
+								</form>
+							</div>
+							<div class="modal-footer">
+								<p>Don't have an account?<a href="#join-modal" data-toggle="modal" data-dismiss="modal">Sign Up</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
     
     <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-center fixed-top">
         <div class="container-fluid pl-5 pr-5">	
@@ -34,12 +122,12 @@
             <div class="collapse navbar-collapse" id="navbarResposive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Programs</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Trainers</a></li>
+                    <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="programs.php" class="nav-link">Programs</a></li>
+                    <li class="nav-item"><a href="trainers.php" class="nav-link">Trainers</a></li>
                     <li class="nav-item active"><a href="pricing.php" class="nav-link">Pricing</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -73,9 +161,9 @@
 				<div class="card">
 					<div class="card-body text-center">
                         <h2 class="heading"><p>ONE DAY TRAINING</p></h2>
-                        <span class="price text-center"><sup>&#8377;</sup> <span class="number">149</span></span>
+                        <span class="price text-center"><sup>&#8377;</sup> <span class="number">89</span></span>
 						<span class="excerpt d-block">100% free. Forever</span>
-                        <a href="#" class="btn btn-primary d-block px-2 py-4 mb-4">Get Started</a>
+                        <a href="#join-modal" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-2 py-4 mb-4" name="day_submit">Get Started</a>
                         
                         <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
                         
@@ -94,7 +182,7 @@
 						<h2 class="heading"><p>PAY EVERY MONTH</p></h2>
                         <span class="price text-center"><sup>&#8377;</sup> <span class="number">899</span></span>
                         <span class="excerpt d-block">All features are included</span>
-                        <a href="#" class="btn btn-primary d-block px-3 py-4 mb-4">Get Started</a>
+                        <a href="#join-modal" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-3 py-4 mb-4" name="month_submit">Get Started</a>
                         
                         <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
                         
@@ -113,7 +201,7 @@
 						<h2 class="heading"><p>1 YEAR MEMBERSHIP</p></h2>
                         <span class="price text-center"><sup>&#8377;</sup> <span class="number">8,999</span></span>
                         <span class="excerpt d-block">All features are included</span>
-                        <a href="#" class="btn btn-primary d-block px-3 py-4 mb-4">Get Started</a>
+                        <a href="#join-modal" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-3 py-4 mb-4" name="year_submit">Get Started</a>
                         
                         <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
                         

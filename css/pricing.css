@@ -20,7 +20,7 @@
 }
 .carousel-caption .bread {
     text-transform: uppercase;
-    font-size: 80px !important;
+    font-size: 5em !important;
     color: #fcd307;
     line-height: 1.2;
     letter-spacing: 2px !important;
@@ -126,7 +126,7 @@
 }
 .price-disc .card-img {
     width: 100%;
-    transform: translate(10%, 50%);
+    transform: translate(5%, 50%);
 }
 .price-disc .card {
     border: none;

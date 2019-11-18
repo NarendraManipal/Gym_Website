@@ -37,7 +37,7 @@
 						<li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
 						<li class="nav-item"><a href="#" class="nav-link">About</a></li>
 						<li class="nav-item"><a href="#" class="nav-link">Programs</a></li>
-						<li class="nav-item"><a href="#" class="nav-link">Trainers</a></li>
+						<li class="nav-item"><a href="trainers.php" class="nav-link">Trainers</a></li>
 						<li class="nav-item"><a href="pricing.php" class="nav-link">Pricing</a></li>
 						<li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
 	          			<li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
@@ -108,7 +108,7 @@
 						<div class="col-12">
 							<div class="modal-header">
 								<h2>Sign In<h2>
-								<button type="button" class="close" data-dismiss="modal"> &times; </button>
+								<button type="button" class="close" data-dismiss="modal" value="&times;"></button>
 							</div>
 						</div>
 					</div>
@@ -142,7 +142,7 @@
 				<div class="overlay-carousel"></div>
 				<div class="carousel-caption mt-5 pt-md-5">
 					<h1 class="mb-3 carousel-h1">Stone is for<span class="carousel-span">Everyone</span></h3>
-					<h2 class="subheading text-center">Shape your body</h3>
+					<h2 class="subheading text-center mt-md-5">Shape your body</h3>
 				</div>
 			</div>
 		</div>

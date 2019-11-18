@@ -6,7 +6,7 @@
   html, body {
     height: 100%;
     width: 100%;
-    font-family: 'Lato', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     color: #000000;
   }
   .navbar {
@@ -58,14 +58,14 @@
   }
   .carousel-caption > .carousel-h1 {
     text-transform: uppercase;
-    font-size: 7vw;
+    font-size: 5vw;
     color: #fcd307;
     line-height: .9;
     letter-spacing: 1px;
     font-weight: 900;
   }
   .carousel-caption > .carousel-h1 .carousel-span {
-    font-size: 16vw;
+    font-size: 14vw;
     display: block;
     -webkit-text-fill-color: transparent;
     /* Will override color (regardless of order) */
@@ -160,6 +160,20 @@
     font-size: 1.3em;
     padding-top: 4rem;
   }
+  .social a {
+  font-size: 1.1em;
+  padding: .6rem;
+}
+.fa-facebook,
+.fa-twitter,
+.fa-instagram {
+  color: #ff7e05;
+}
+.fa-facebook:hover,
+.fa-twitter:hover,
+.fa-instagram:hover {
+  color: #ffc505;
+} 
 
 
 
@@ -174,6 +188,10 @@
     .text-black {
       font-size: 1.2em;
       padding-top: 1.5rem;
+    }
+    .social a {
+      font-size: .9em;
+      padding: .4rem;
     }
   }
   @media (max-width: 768px) {
@@ -200,6 +218,10 @@
       font-size: 1em;
       padding-top: 1.5rem;
     }
+    .social a {
+      font-size: 1.1em;
+      padding: .7rem;
+    }
   }
   @media (max-width: 576px) {
       .carousel-caption {
@@ -215,6 +237,10 @@
     .text-black {
       font-size: .6em;
       padding-top: 1.2rem;
+    }
+    .social a {
+      font-size: 1.1em;
+      padding: .7rem;
     }
   }
 
