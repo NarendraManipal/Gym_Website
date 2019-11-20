@@ -1,3 +1,7 @@
+<?php
+	include 'controllers/authController.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,12 +34,33 @@
             <div class="collapse navbar-collapse" id="navbarResposive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Programs</a></li>
-                    <li class="nav-item active"><a href="#" class="nav-link">Trainers</a></li>
+                    <li class="nav-item"><a href="timetable.php" class="nav-link">Timetable</a></li>
+                    <li class="nav-item active"><a href="trainers.php" class="nav-link">Trainers</a></li>
+                    <?php 
+                        if(isset($_SESSION['id']))
+                        {
+                            if($_SESSION['email'] === "narendramanipal2@gmail.com" || $_SESSION['email'] === "anishsjathan@gmail.com")
+                            {
+                    ?>
+                    <li class="nav-item"><a href="users.php" class="nav-link">Users</a></li>
+                    <?php
+                            }
+                            else
+                            {
+                    ?>
                     <li class="nav-item"><a href="pricing.php" class="nav-link">Pricing</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+                    <?php
+                            }
+                        }
+                        else
+                        {
+                    ?>
+                    <li class="nav-item"><a href="pricing.php" class="nav-link">Pricing</a></li>
+                    <?php
+                        }
+                    ?>
+                    <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -47,7 +72,7 @@
                 <img src="img/bg_1.jpg">
                 <div class="overlay"></div>
                 <div class="carousel-caption mt-5 pt-md-5">
-                    <h1 class="mb-md-3 mt-md-5 pt-md-5 bread">OUR COACHES</h1>
+                    <h1 class="mb-md-3 mt-md-5 pt-md-5 bread" data-aos="fade-up" data-aos-delay="100">OUR COACHES</h1>
                     <p class="breadcrumbs text-center"><span class="mr-2"><a href="index.php">Home</a></span> <span>COACHES</span></p>
                 </div>
             </div>
@@ -153,7 +178,7 @@
                     <div class="img-overlay"></div>
                     <div class="card-body heading-section">
                         <span>Personal trainer</span>
-                        <h2 class="heading"><p>MARK BROOK</p></h2>
+                        <h2 class="heading"><p>LEA YOUNG</p></h2>
                         <p class="card-text" data-aos="fade-up" data-aos-delay="100">Current accredited personal training certification with 3 years of experience as a personal trainer and Excellent verbal communication skills.</p>
                         <div class="container-fluid padding">
 								<div class="row text-center padding">
@@ -173,7 +198,7 @@
                     <div class="img-overlay"></div>
                     <div class="card-body heading-section">
                         <span>Personal trainer</span>
-                        <h2 class="heading"><p>MARK BROOK</p></h2>
+                        <h2 class="heading"><p>JUSTIN DANIEL</p></h2>
                         <p class="card-text" data-aos="fade-up" data-aos-delay="200">Current accredited personal training certification with 3 years of experience as a personal trainer and Excellent verbal communication skills.</p>
                         <div class="container-fluid padding">
 								<div class="row text-center padding">
@@ -189,11 +214,11 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="card coach">
-                    <img class="card-img-top" src="img/trainer-3.jpg">
+                    <img class="card-img-top" src="img/trainer-7.jpg">
                     <div class="img-overlay"></div>
                     <div class="card-body heading-section">
                         <span>Personal trainer</span>
-                        <h2 class="heading"><p>MARK BROOK</p></h2>
+                        <h2 class="heading"><p>GEORGE COOPER</p></h2>
                         <p class="card-text" data-aos="fade-up" data-aos-delay="300">Current accredited personal training certification with 3 years of experience as a personal trainer and Excellent verbal communication skills.</p>
                         <div class="container-fluid padding">
 								<div class="row text-center padding">
@@ -209,11 +234,11 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="card coach">
-                    <img class="card-img-top" src="img/trainer-4.jpg">
+                    <img class="card-img-top" src="img/trainer-8.jpg">
                     <div class="img-overlay"></div>
                     <div class="card-body heading-section">
-                        <span>Personal trainer</span>
-                        <h2 class="heading"><p>MARK BROOK</p></h2>
+                        <span>Yoga trainer</span>
+                        <h2 class="heading"><p>ALYSHA REED</p></h2>
                         <p class="card-text" data-aos="fade-up" data-aos-delay="400">Current accredited personal training certification with 3 years of experience as a personal trainer and Excellent verbal communication skills.</p>
                         <div class="container-fluid padding">
 								<div class="row text-center padding">
@@ -235,32 +260,56 @@
     <!-- footer -->
 
 	<footer>
-		<div class="container-fluid padding">
+		<div class="container-fluid padding px-5">
 			<div class="row text-center">
-				<div class="col-md-4">
-					<a class="navbar-brand" href="#"><h1>Stone</h1></a>
-					<hr class="light">
-					<p>+91 9876543210</p>
-					<p>stone@gmail.com</p>
-					<p>Katpady</p>
-					<p>Udupi, Karnataka, 576101</p>
+				<div class="col-md-3">
+					<h5 class="mb-5">About Us</h5>
+					<p>Push your fitness further with our mix of facilities and we'll support you with advice on new and better ways to train.</p>
+					<ul class="list-inline">
+						<li class="list-inline-item">
+							<a class="social-icon text-xs-center" target="_blank" href="#">
+								<i class="fab fa-facebook"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="social-icon text-xs-center" target="_blank" href="#">
+								<i class="fab fa-twitter"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="social-icon text-xs-center" target="_blank" href="#">
+								<i class="fab fa-skype"></i>
+							</a>
+						</li>
+						<li class="list-inline-item">
+							<a class="social-icon text-xs-center" target="_blank" href="#">
+								<i class="fab fa-google"></i>
+							</a>
+						</li>
+					</ul>
 				</div>
-				<div class="col-md-4">
-					<hr class="light">
-					<h5>Timings</h5>
-					<hr class="light">
-					<p>Monday: 4am - 10pm</p>
-					<p>Saturday: 5am - 8pm</p>
-					<p>Sunday: 5am - 1pm</p>
+				<div class="col-md-3">
+					<h5 class="mb-5">Timings</h5>
+					<p>Monday: &nbsp; 4am - 10pm</p>
+					<p>Saturday: &nbsp; 5am - 8pm</p>
+					<p>Sunday: &nbsp; 5am - 1pm</p>
 				</div>
-				<div class="col-md-4">
-					<hr class="light">
-					<h5>Classes</h5>
-					<hr class="light">
-					<p>Yoga</p>
-					<p>Zumba</p>
-					<p>Fitness Classes</p>
+				<div class="col-md-3">
+					<h5 class="mb-5">Classes</h5>
+					<p>FREESTYLE™ GROUP TRAINING</p>
+					<p>PRECISIONCYCLING</p>
+					<p>BODYBALANCE®</p>
 					<p>MMA</p>
+				</div>
+				<div class="col-md-3">
+					<h5 class="mb-5">Have a question?</h5>
+					<div class="block-23 mb-3">
+						<ul>
+							<li><span> <img class="icon  mr-1" src="img/icon/map-marker.png" alt=""> </span><span class="text">Stone gym, Katpady, Udupi</span></li>
+							<li><span> <img class="icon mr-3" src="img/icon/phone-call.png" alt=""></span><span class="text"> +91 7411522246</span></li>
+							<li><span> <img class="icon mr-3" src="img/icon/envelope.png" alt=""></span><span class="text">info@stone.com</span></li>
+						</ul>
+					</div>
 				</div>
 				<div class="col-12">
 					<hr class="light-100">

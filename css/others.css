@@ -358,6 +358,32 @@ img {
 
 
 /*---Media Queries --*/
+@media (min-width: 1200px) {
+  .subheading {
+	font-size: .9em !important;
+	color: #fcd307;
+	text-transform: uppercase;
+	font-weight: 500;
+	letter-spacing: .8rem;
+	display: inline-block;
+	position: relative; 
+}
+.subheading:after {
+	left: -15px; 
+}
+.subheading:before {
+	right: -10px; 
+}
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+	border-radius: 50%;
+	left: -10%;
+	transform: translateX(100%);
+}
+
+}
+
 @media (max-width: 992px) {
   .subheading {
 	font-size: .9em !important;
@@ -373,6 +399,13 @@ img {
 }
 .subheading:before {
 	right: -10px; 
+}
+.frontside .card .card-body img {
+    width: 120px;
+    height: 120px;
+	border-radius: 50%;
+	left: -50%;
+	transform: translateX(10%);
 }
 
 }
