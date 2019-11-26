@@ -1,5 +1,6 @@
 <?php
-	include 'controllers/authController.php';
+    include 'controllers/authController.php';
+    include 'controllers/trainerController.php';
 ?>
 
 <!DOCTYPE html>
@@ -20,6 +21,7 @@
     
     <link href="css/style.css" rel="stylesheet">
     <link href="css/others.css" rel="stylesheet">
+    <link href="css/login-box.css" rel="stylesheet">
     <link href="css/trainers.css" rel="stylesheet">
 
 </head>
@@ -39,7 +41,7 @@
                     <?php 
                         if(isset($_SESSION['id']))
                         {
-                            if($_SESSION['email'] === "narendramanipal2@gmail.com" || $_SESSION['email'] === "anishsjathan@gmail.com")
+                            if($_SESSION['admin'] === true)
                             {
                     ?>
                     <li class="nav-item"><a href="users.php" class="nav-link">Users</a></li>
@@ -79,6 +81,43 @@
         </div>
     </div>
 
+    <!-- Add trainer modal -->
+		<div class="modal fade" id="join-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-header">
+								<h2>Sign Up<h2>
+								<button type="button" class="close" data-dismiss="modal"> &times; </button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-body">
+								<form action="" method="POST" enctype="multipart/form-data">
+									<div class="row">
+										<div class="col-xs-6">
+											<input class="form-control" type="text" name="trainer-fname" value="" placeholder="Firstname" required>
+										</div>
+										<div class="col-xs-6">
+											<input class="form-control" type="text" name="trainer-lname" value="" placeholder="Lastname" required>
+										</div>
+									</div>
+                                    <input type="text" name="designation" class="form-control" placeholder="Designation" required>
+									<input id="file" type="file" name="image" value="" placeholder="Select an Image" required>
+									<label  class="my-4" for="file">Choose a Photo</label><br>
+                                    <textarea class="form-control" name="discription" cols="40" rows="4" placeholder="Description..." required></textarea><br>
+									<button class="btn login-primary mt-3" type="submit" name="upload-image" value="Submit">Submit</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 
     <!--Coaches-->
 
@@ -91,169 +130,49 @@
                 <h1>Our Coaches</h1>
             </div>
         </div>
-        <div class="row padding mx-md-5 mt-md-5">
-			<div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="card coach">
-                    <img class="card-img-top" src="img/trainer-1.jpg">
-                    <div class="img-overlay"></div>
-                    <div class="card-body heading-section">
-                        <span>Owner / Head Coach</span>
-                        <h2 class="heading"><p>MARK BROOK</p></h2>
-                        <p class="card-text" data-aos="fade-up" data-aos-delay="100">Current accredited personal training certification with 15 years of experience as a personal trainer and Excellent verbal communication skills.</p>
-                        <div class="container-fluid padding">
-								<div class="row text-center padding">
-									<div class="col-12 social padding">
-                                        <a target="_blank" href="#" data-aos="fade-up" data-aos-delay="200"><i class="fab fa-instagram"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="300"><i class="fab fa-facebook"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="400"><i class="fab fa-twitter"></i></a>
-									</div>
-								</div>
-							</div>
+        <div class="row padding mx-md-5 mt-md-5" id="content">
+            <?php
+                while($trainer_content = $trainer_fetch_result->fetch_assoc())
+                {
+                    ?>
+                    <div class="col-xs-12 col-sm-6 col-md-3" id='img_div'>
+                        <div class="card coach">
+                            <img class="card-img-top" src=<?php echo "upload_images/".$trainer_content['image'];?>>
+                            <div class="img-overlay"></div>
+                            <div class="card-body heading-section">
+                                <span><?php echo $trainer_content['designation'];?></span>
+                                <h2 class="heading"><p><?php echo $trainer_content['fname']." ".$trainer_content['lname'];?></p></h2>
+                                <p class="card-text" data-aos="fade-up" data-aos-delay="400"><?php echo $trainer_content['discription'];?></p>
+                                <div class="container-fluid padding">
+                                        <div class="row text-center padding">
+                                            <div class="col-12 social padding">
+                                                <a target="_blank" href="#" data-aos="fade-up" data-aos-delay="500"><i class="fab fa-instagram"></i></a>
+                                                <a target="_blank" href="#" data-aos="fade-up" data-aos-delay="600"><i class="fab fa-facebook"></i></a>
+                                                <a target="_blank" href="#" data-aos="fade-up" data-aos-delay="700"><i class="fab fa-twitter"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="card coach">
-                    <img class="card-img-top" src="img/trainer-2.jpg">
-                    <div class="img-overlay"></div>
-                    <div class="card-body heading-section">
-                        <span>Head Coach</span>
-                        <h2 class="heading"><p>SARAH HENDERSON</p></h2>
-                        <p class="card-text" data-aos="fade-up" data-aos-delay="200">Current accredited personal training certification with 3 years of experience as a personal trainer and Excellent verbal communication skills.</p>
-                        <div class="container-fluid padding">
-								<div class="row text-center padding">
-									<div class="col-12 social padding">
-                                        <a target="_blank" href="#" data-aos="fade-up" data-aos-delay="300"><i class="fab fa-instagram"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="400"><i class="fab fa-facebook"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="500"><i class="fab fa-twitter"></i></a>
-									</div>
-								</div>
-							</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="card coach">
-                    <img class="card-img-top" src="img/trainer-3.jpg">
-                    <div class="img-overlay"></div>
-                    <div class="card-body heading-section">
-                        <span>Coach</span>
-                        <h2 class="heading"><p>GEORGE HUMP</p></h2>
-                        <p class="card-text" data-aos="fade-up" data-aos-delay="300">Current accredited personal training certification with 3 years of experience as a personal trainer and Excellent verbal communication skills.</p>
-                        <div class="container-fluid padding">
-								<div class="row text-center padding">
-									<div class="col-12 social padding">
-                                        <a target="_blank" href="#" data-aos="fade-up" data-aos-delay="400"><i class="fab fa-instagram"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="500"><i class="fab fa-facebook"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="600"><i class="fab fa-twitter"></i></a>
-									</div>
-								</div>
-							</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="card coach">
-                    <img class="card-img-top" src="img/trainer-4.jpg">
-                    <div class="img-overlay"></div>
-                    <div class="card-body heading-section">
-                        <span>Coach</span>
-                        <h2 class="heading"><p>VICTOR HUMP</p></h2>
-                        <p class="card-text" data-aos="fade-up" data-aos-delay="400">Current accredited personal training certification with 3 years of experience as a personal trainer and Excellent verbal communication skills.</p>
-                        <div class="container-fluid padding">
-								<div class="row text-center padding">
-									<div class="col-12 social padding">
-                                        <a target="_blank" href="#" data-aos="fade-up" data-aos-delay="500"><i class="fab fa-instagram"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="600"><i class="fab fa-facebook"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="700"><i class="fab fa-twitter"></i></a>
-									</div>
-								</div>
-							</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="card coach">
-                    <img class="card-img-top" src="img/trainer-5.jpg">
-                    <div class="img-overlay"></div>
-                    <div class="card-body heading-section">
-                        <span>Personal trainer</span>
-                        <h2 class="heading"><p>LEA YOUNG</p></h2>
-                        <p class="card-text" data-aos="fade-up" data-aos-delay="100">Current accredited personal training certification with 3 years of experience as a personal trainer and Excellent verbal communication skills.</p>
-                        <div class="container-fluid padding">
-								<div class="row text-center padding">
-									<div class="col-12 social padding">
-                                        <a target="_blank" href="#" data-aos="fade-up" data-aos-delay="200"><i class="fab fa-instagram"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="300"><i class="fab fa-facebook"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="400"><i class="fab fa-twitter"></i></a>
-									</div>
-								</div>
-							</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="card coach">
-                    <img class="card-img-top" src="img/trainer-6.jpg">
-                    <div class="img-overlay"></div>
-                    <div class="card-body heading-section">
-                        <span>Personal trainer</span>
-                        <h2 class="heading"><p>JUSTIN DANIEL</p></h2>
-                        <p class="card-text" data-aos="fade-up" data-aos-delay="200">Current accredited personal training certification with 3 years of experience as a personal trainer and Excellent verbal communication skills.</p>
-                        <div class="container-fluid padding">
-								<div class="row text-center padding">
-									<div class="col-12 social padding">
-                                        <a target="_blank" href="#" data-aos="fade-up" data-aos-delay="300"><i class="fab fa-instagram"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="400"><i class="fab fa-facebook"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="500"><i class="fab fa-twitter"></i></a>
-									</div>
-								</div>
-							</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="card coach">
-                    <img class="card-img-top" src="img/trainer-7.jpg">
-                    <div class="img-overlay"></div>
-                    <div class="card-body heading-section">
-                        <span>Personal trainer</span>
-                        <h2 class="heading"><p>GEORGE COOPER</p></h2>
-                        <p class="card-text" data-aos="fade-up" data-aos-delay="300">Current accredited personal training certification with 3 years of experience as a personal trainer and Excellent verbal communication skills.</p>
-                        <div class="container-fluid padding">
-								<div class="row text-center padding">
-									<div class="col-12 social padding">
-                                        <a target="_blank" href="#" data-aos="fade-up" data-aos-delay="400"><i class="fab fa-instagram"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="500"><i class="fab fa-facebook"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="600"><i class="fab fa-twitter"></i></a>
-									</div>
-								</div>
-							</div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="card coach">
-                    <img class="card-img-top" src="img/trainer-8.jpg">
-                    <div class="img-overlay"></div>
-                    <div class="card-body heading-section">
-                        <span>Yoga trainer</span>
-                        <h2 class="heading"><p>ALYSHA REED</p></h2>
-                        <p class="card-text" data-aos="fade-up" data-aos-delay="400">Current accredited personal training certification with 3 years of experience as a personal trainer and Excellent verbal communication skills.</p>
-                        <div class="container-fluid padding">
-								<div class="row text-center padding">
-									<div class="col-12 social padding">
-                                        <a target="_blank" href="#" data-aos="fade-up" data-aos-delay="500"><i class="fab fa-instagram"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="600"><i class="fab fa-facebook"></i></a>
-										<a target="_blank" href="#" data-aos="fade-up" data-aos-delay="700"><i class="fab fa-twitter"></i></a>
-									</div>
-								</div>
-							</div>
-                    </div>
-                </div>
-            </div>
-
-            
+                    <?php
+                }
+            ?>
+            <?php
+                if(isset($_SESSION['id']))
+                {
+                    if($_SESSION['admin'] === true)
+                    {
+                        ?>
+                        <div class="col-xs-12 col-sm-6 col-md-3">
+                            <div class="card coach admin-login">
+                                <a data-target="#join-modal" data-toggle="modal"><img class="card-img model-img" src="img/icon/plus.png"></a>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                }
+            ?>
 		</div>
     </div>
 

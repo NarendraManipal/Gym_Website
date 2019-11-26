@@ -71,4 +71,115 @@
 .coach .heading p {
     color: #313131;
     font-size: .7em !important;
+    text-transform: uppercase;
 }
+.admin-login {
+    width: 40%;
+    border: #313131 solid 1px;
+    transform: translateX(50%);
+}
+.coach .model-img {
+    width: 45%;
+    height: 10vh;
+    margin: 2rem;
+}
+.modal-body input[type="file"]
+{
+    display: none;
+}
+.modal-body label {
+    color: #fc8307;
+    border: #fd6602 solid 1.3px;
+    border-radius: 2rem;
+    font-size: 1em;
+    height: 5vh;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+/*---Media Queries --*/
+@media (max-width: 1025px) {
+    .admin-login {
+        width: 90%;
+        border: #313131 solid 1px;
+        transform: translateX(10%);
+    }
+    .coach .model-img {
+        width: 65%;
+        height: 10vh;
+        margin: 2rem;
+    }
+}
+@media (max-width: 992px) {
+    .admin-login {
+        width: 80%;
+        border: #313131 solid 1px;
+        transform: translateX(50%);
+    }
+    .coach .model-img {
+        width: 45%;
+        height: 10vh;
+        margin: 2rem;
+    }
+}
+@media (max-width: 768px) {
+    .admin-login {
+        width: 40%;
+        border: #313131 solid 1px;
+        transform: translateX(50%);
+    }
+    .coach .model-img {
+        width: 50%;
+        height: 10vh;
+        margin: 2rem;
+    }
+}
+@media (max-width: 576px) {
+    .admin-login {
+        width: 40%;
+        border: #313131 solid 1px;
+        transform: translateX(75%);
+    }
+    .coach .model-img {
+        width: 60%;
+        height: 10vh;
+        margin: 2rem;
+    }
+}
+@media (max-width: 369px) {
+    .admin-login {
+        width: 50%;
+        border: #313131 solid 1px;
+        transform: translateX(50%);
+    }
+    .coach .model-img {
+        width: 50%;
+        height: 10vh;
+        margin: 2rem;
+    }
+}
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/

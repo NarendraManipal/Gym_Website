@@ -32,24 +32,27 @@
 				alert('$message');
 			</script>";
         }
-
-        $password = password_hash($password, PASSWORD_DEFAULT);
-        $token = bin2hex(random_bytes(50));
-
-        $sql = "INSERT INTO users (firstname, lastname, email, password, phoneno, address, city, postal_code, token) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param('sssssssss', $firstname, $lastname, $email, $password, $phoneno, $address, $city, $postal_code, $token);
-    
-        if($stmt->execute())
+        else
         {
-            $user_id = $conn->insert_id;
-            $_SESSION['id'] = $user_id;
-            $_SESSION['firstname'] = $firstname;
-            $_SESSION['lastname'] = $lastname;
-            $_SESSION['email'] = $email;
+            $password = password_hash($password, PASSWORD_DEFAULT);
+            $token = bin2hex(random_bytes(50));
 
-            header('location: index.php');
-            exit();
+            $sql = "INSERT INTO users (firstname, lastname, email, password, phoneno, address, city, postal_code, token) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param('sssssssss', $firstname, $lastname, $email, $password, $phoneno, $address, $city, $postal_code, $token);
+        
+            if($stmt->execute())
+            {
+                $user_id = $conn->insert_id;
+                $_SESSION['id'] = $user_id;
+                $_SESSION['firstname'] = $firstname;
+                $_SESSION['lastname'] = $lastname;
+                $_SESSION['email'] = $email;
+                $_SESSION['admin'] = false;
+
+                header('location: index.php');
+                exit();
+            }
         }
         
     }
@@ -75,6 +78,12 @@
             $_SESSION['firstname'] = $user['firstname'];
             $_SESSION['lastname'] = $user['lastname'];
             $_SESSION['email'] = $user['email'];
+            $_SESSION['admin'] = false;
+
+            if($user['email'] === "narendramanipal2@gmail.com" || $user['email'] === "anishsjathan@gmail.com")
+            {
+                $_SESSION['admin'] = true;
+            }
 
             //flash message
             $_SESSION['message'] = "You are now logged in!";

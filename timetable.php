@@ -39,7 +39,7 @@
                     <?php 
 						if(isset($_SESSION['id']))
 						{
-							if($_SESSION['email'] === "narendramanipal2@gmail.com" || $_SESSION['email'] === "anishsjathan@gmail.com")
+							if($_SESSION['admin'] === true)
 							{
 					?>
 					<li class="nav-item"><a href="users.php" class="nav-link">Users</a></li>

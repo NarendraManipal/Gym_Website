@@ -1,6 +1,7 @@
 <?php
     include 'controllers/authController.php';
     include 'controllers/usersController.php';
+    include 'controllers/trainerController.php';
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@
     <link href="css/trainers.css" rel="stylesheet">
     <link href="css/easyTable.css"  rel="stylesheet">
 </head>
-<body>
+<body onload="userfun()">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-center fixed-top">
         <div class="container-fluid pl-5 pr-5">	
             <a class="navbar-brand" href="index.php"><h1>STONE</h1></a>
@@ -92,9 +93,9 @@
         <div class="row padding table-select" data-aos="fade-up" data-aos-delay="250">
             <div class="container">
                 <ul class="nav nav-pills">
-                    <li><a class="nav-item nav-link active" data-toggle="pill" href="#users">Users</a></li>
-                    <li><a class="nav-item nav-link" data-toggle="pill" href="#trainers">Trainers</a></li>
-                    <li><a class="nav-item nav-link" data-toggle="pill" href="#members">Members</a></li>
+                    <li><a class="nav-item nav-link active" data-toggle="pill" href="#users" onclick="userfun()">Users</a></li>
+                    <li><a class="nav-item nav-link" data-toggle="pill" href="#trainers" onclick="trainerfun()">Trainers</a></li>
+                    <li><a class="nav-item nav-link" data-toggle="pill" href="#members" onclick="memberfun()">Members</a></li>
                 </ul>
             </div>
         </div>
@@ -105,20 +106,22 @@
                 <div class="container">
                     <div class="col-12 panel panel-default">
                         <div class="table100 ver6 panel-body">
-                            <table id="table">
+                            <table id="user-table">
                                 <thead class="text-center" data-vertable="ver6">
                                     <tr class="row100 head">
                                         <th class="column100 column1">Id</th>
-                                        <th class="column100 column2">Firstname</th>
+                                        <th class="column100 column2">Name</th>
                                         <th class="column100 column3">Email</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    <?php while($user_content = $user_result->fetch_assoc()) 
+                                    <?php 
+                                        $cnt = 1;
+                                        while($user_content = $user_result->fetch_assoc()) 
                                         { ?>
                                         <tr class="row100">
-                                            <td class="column100 column1"><?php echo $user_content['id']; ?></td>
-                                            <td class="column100 column2"><?php echo $user_content['firstname']." ".$user_content['lastname']; ?></td>
+                                            <td class="column100 column1"><?php echo $cnt++; ?></td>
+                                            <td class="column100 column2"><?php echo ucwords($user_content['firstname']." ".$user_content['lastname']); ?></td>
                                             <td class="column100 column3"><?php echo $user_content['email']; ?></td>
                                         </tr>
                                     <?php
@@ -129,25 +132,27 @@
                     </div>
                 </div>
             </div>
-            <div id="trainers" class="row padding tab-pane fade">
+            <div  class="row padding tab-pane fade" id="trainers">
                 <div class="container">
                     <div class="col-12 panel panel-default">
                         <div class="table100 ver6 panel-body">
-                            <table id="table">
+                            <table id="trainer-table">
                                 <thead class="text-center" data-vertable="ver6">
                                     <tr class="row100 head">
                                         <th class="column100 column1">Id</th>
-                                        <th class="column100 column2">Firstname</th>
-                                        <th class="column100 column3">Email</th>
+                                        <th class="column100 column2">Name</th>
+                                        <th class="column100 column3">Designation</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    <?php while($user_content = $user_result->fetch_assoc()) 
+                                    <?php 
+                                        $cnt = 1;
+                                        while($trainer_content = $trainer_fetch_result->fetch_assoc()) 
                                         { ?>
                                         <tr class="row100">
-                                            <td class="column100 column1"><?php echo $user_content['id']; ?></td>
-                                            <td class="column100 column2"><?php echo $user_content['firstname']." ".$user_content['lastname']; ?></td>
-                                            <td class="column100 column3"><?php echo $user_content['email']; ?></td>
+                                            <td class="column100 column1"><?php echo $cnt++; ?></td>
+                                            <td class="column100 column2"><?php echo ucwords($trainer_content['fname']." ".$trainer_content['lname']); ?></td>
+                                            <td class="column100 column3"><?php echo ucwords($trainer_content['designation']); ?></td>
                                         </tr>
                                     <?php
                                         }?>
@@ -157,11 +162,11 @@
                     </div>
                 </div>
             </div>
-            <div id="members" class="row padding tab-pane fade">
+            <div  class="row padding tab-pane fade" id="members">
                 <div class="container">
                     <div class="col-12 panel panel-default">
                         <div class="table100 ver6 panel-body">
-                            <table id="table">
+                            <table id="member-table">
                                 <thead class="text-center" data-vertable="ver6">
                                     <tr class="row100 head">
                                         <th class="column100 column1">Id</th>
@@ -263,7 +268,18 @@
 	<script src="js/animate.js"></script>
     <script src="js/easyTable.js"></script>
     <script>
-        $("#table").easyTable();
+        function userfun()
+        {
+            $("#user-table").easyTable();
+        }
+        function trainerfun()
+        {
+            $("#trainer-table").easyTable();
+        }
+        function memberfun()
+        {
+            $("#member-table").easyTable();
+        }
     </script>
 </body>
 </html>

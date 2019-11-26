@@ -41,7 +41,7 @@
 						<?php 
 							if(isset($_SESSION['id']))
 							{
-								if($_SESSION['email'] === "narendramanipal2@gmail.com" || $_SESSION['email'] === "anishsjathan@gmail.com")
+								if($_SESSION['admin'] === true)
 								{
 						?>
 						<li class="nav-item"><a href="users.php" class="nav-link">Users</a></li>
@@ -235,7 +235,7 @@
 					<button class="btn btn-primary px-5 py-3 mt-md-2" data-target="#join-modal" data-toggle="modal">Join Us</button>
 				<?php endif; ?>
 				<?php if(isset($_SESSION['id'])): ?>
-					<a class="btn btn-secondary" href="index.php?logout=1"><?php echo "Welcome, ".$_SESSION['firstname']." ".$_SESSION['lastname']; ?></a>
+					<a class="btn btn-secondary" href="index.php?logout=1"><?php echo "Hi, ".$_SESSION['firstname']." ".$_SESSION['lastname']; ?></a>
 				<?php endif; ?>
 			</div>
 		</div>

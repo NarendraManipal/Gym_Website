@@ -1,5 +1,6 @@
 <?php
-	require 'controllers/authController.php';
+    include 'controllers/authController.php';
+    include 'controllers/contactController.php';
 ?>
 
 <!DOCTYPE html>
@@ -41,7 +42,7 @@
                     <?php 
                         if(isset($_SESSION['id']))
                         {
-                            if($_SESSION['email'] === "narendramanipal2@gmail.com" || $_SESSION['email'] === "anishsjathan@gmail.com")
+                            if($_SESSION['admin'] === true)
                             {
                     ?>
                     <li class="nav-item"><a href="users.php" class="nav-link">Users</a></li>
@@ -94,18 +95,38 @@
             </div>
             
             <div class="col-xs-12 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <form action="#" class="contact-form">
+                <form action="" class="contact-form" method="POST">
+                    <?php
+                        if($success === '')
+                        {
+                            ?>
+                                <span class=""></span>
+                            <?php
+                        }
+                        else if($success === 'Success')
+                        {
+                            ?>
+                                <span class="alert alert-success">Message Sent!!!</span>
+                            <?php
+                        }
+                        else
+                        {
+                            ?>
+                                <span class="alert alert-danger">Sending failed Try again later!!!</span>
+                            <?php
+                        }
+                    ?>
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Your Name">
+                            <input type="text" class="form-control" name="sender-name" placeholder="Your Name" required>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" placeholder="Your Email">
+                            <input type="text" class="form-control" name="sender-mail" placeholder="Your Email" required>
                         </div>
                     </div>
-                    <input type="text" class="form-control" placeholder="Subject">
-                    <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
-                    <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5 mt-5">
+                    <input type="text" class="form-control" name="subject" placeholder="Subject" required>
+                    <textarea name="message-body" id="" cols="30" rows="7" class="form-control" placeholder="Message" required></textarea>
+                    <input type="submit" value="Send Message" name="msg-submit" class="btn btn-primary py-3 px-5 mt-5">
                 </form>
             </div>
 		</div>
