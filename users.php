@@ -90,7 +90,7 @@
                 <h1>User details</h1>
             </div>
         </div>
-        <div class="row padding table-select" data-aos="fade-up" data-aos-delay="250">
+        <div class="row padding table-select" data-aos="fade-up" data-aos-delay="250" id="tableContent">
             <div class="container">
                 <ul class="nav nav-pills">
                     <li><a class="nav-item nav-link active" data-toggle="pill" href="#users" onclick="userfun()">Users</a></li>
@@ -112,6 +112,8 @@
                                         <th class="column100 column1">Id</th>
                                         <th class="column100 column2">Name</th>
                                         <th class="column100 column3">Email</th>
+                                        <th class="column100 column4" hidden></th>
+                                        <th class="column100 column5"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
@@ -120,9 +122,13 @@
                                         while($user_content = $user_result->fetch_assoc()) 
                                         { ?>
                                         <tr class="row100">
-                                            <td class="column100 column1"><?php echo $cnt++; ?></td>
-                                            <td class="column100 column2"><?php echo ucwords($user_content['firstname']." ".$user_content['lastname']); ?></td>
-                                            <td class="column100 column3"><?php echo $user_content['email']; ?></td>
+                                            <form action="" method="post">
+                                                <td class="column100 column1"><?php echo $cnt++; ?></td>
+                                                <td class="column100 column2"><?php echo ucwords($user_content['firstname']." ".$user_content['lastname']); ?></td>
+                                                <td class="column100 column3"><?php echo $user_content['email']; ?></td>
+                                                <td class="column100 column4" hidden><input type="hidden" name="userToDelete" value="<?php echo $user_content['id']; ?>"></td>
+                                                <td class="column100 column5"><input class="btn btn-secondary" type="submit" name="user-delete" value="delete"></td>
+                                            </form>
                                         </tr>
                                     <?php
                                         }?>
@@ -142,6 +148,8 @@
                                         <th class="column100 column1">Id</th>
                                         <th class="column100 column2">Name</th>
                                         <th class="column100 column3">Designation</th>
+                                        <th class="column100 column4" hidden></th>
+                                        <th class="column100 column5"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
@@ -150,9 +158,13 @@
                                         while($trainer_content = $trainer_fetch_result->fetch_assoc()) 
                                         { ?>
                                         <tr class="row100">
-                                            <td class="column100 column1"><?php echo $cnt++; ?></td>
-                                            <td class="column100 column2"><?php echo ucwords($trainer_content['fname']." ".$trainer_content['lname']); ?></td>
-                                            <td class="column100 column3"><?php echo ucwords($trainer_content['designation']); ?></td>
+                                            <form action="" method="post">
+                                                <td class="column100 column1"><?php echo $cnt++; ?></td>
+                                                <td class="column100 column2"><?php echo ucwords($trainer_content['fname']." ".$trainer_content['lname']); ?></td>
+                                                <td class="column100 column3"><?php echo ucwords($trainer_content['designation']); ?></td>
+                                                <td class="column100 column4" hidden><input type="hidden" name="trainerToDelete" value="<?php echo $trainer_content['id']; ?>"></td>
+                                                <td class="column100 column5"><input class="btn btn-secondary" type="submit" name="trainer-delete" value="delete"></td>
+                                            </form>
                                         </tr>
                                     <?php
                                         }?>

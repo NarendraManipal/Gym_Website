@@ -82,7 +82,6 @@
         </div>
     </div>
 
-
     <!--contact info-->
     <div class="container padding contact-section mt-5">
 	    <div class="row padding block-9 mx-md-5 my-md-5 pr-md-5" data-aos="fade-up" data-aos-delay="100">
@@ -100,19 +99,19 @@
                         if($success === '')
                         {
                             ?>
-                                <span class=""></span>
+                                <div class=""></div>
                             <?php
                         }
                         else if($success === 'Success')
                         {
                             ?>
-                                <span class="alert alert-success">Message Sent!!!</span>
+                                <div class="alert alert-success">Message Sent!!!</div>
                             <?php
                         }
                         else
                         {
                             ?>
-                                <span class="alert alert-danger">Sending failed Try again later!!!</span>
+                                <div class="alert alert-danger">Sending failed Try again later!!!</div>
                             <?php
                         }
                     ?>
@@ -196,7 +195,6 @@
 		</div>
 	</footer>
 
-
     
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -204,6 +202,6 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/animate.js"></script>
+    <script src="js/animate.js"></script>
 </body>
 </html>

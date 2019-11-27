@@ -67,4 +67,32 @@
     $stmt->execute();
     $trainer_fetch_result = $stmt->get_result();
     $stmt->close();
+
+    if(isset($_POST['trainer-delete']))
+    {
+        $key = $_POST['trainerToDelete'];
+        $checkQuery = "SELECT * FROM trainers WHERE id='$key' ";
+        $stmt = $conn->prepare($checkQuery);
+        $stmt->execute();
+        $resultCheckQuery = $stmt->get_result();
+        $countCheckQuery = $resultCheckQuery->num_rows;
+        $stmt->close();
+
+        if($countCheckQuery > 0)
+        {
+            $queryDelete = "DELETE FROM trainers WHERE id='$key'";
+            $stmt = $conn->prepare($queryDelete);
+            $stmt->execute();
+            $stmt->close();
+
+            header("Location: users.php#tableContent");
+        }
+        else
+        {
+            $message = "Failed!!";
+			echo "<script type='text/javascript'>
+				alert('$message');
+			</script>";
+        }
+    }
 ?>

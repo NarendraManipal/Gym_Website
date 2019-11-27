@@ -8,3 +8,4 @@ function showPassword()
         passwd.type = "password";
     }
 }
+

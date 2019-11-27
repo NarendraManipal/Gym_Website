@@ -206,7 +206,7 @@
 	</div>
 
 	<!--moto-->
-	<div class="container-fluid padding ">
+	<div class="container-fluid padding">
 		<div class="row padding mx-md-5 my-md-5">
 			<div class="col-xs-12 col-md-6">
 				<div class="row">
@@ -243,7 +243,7 @@
 
 	<!--Sevices-->
 
-	<div class="container-fluid padding">
+	<div class="container-fluid padding" id="service">
 		<div class="row padding">
 			<div class="col-12 heading-section text-center">
 				<span>SERVICES</span>
@@ -301,7 +301,7 @@
 	</div>
 
 	<!--Success stories-->
-	<div class="container-fluid padding">
+	<div class="container-fluid padding" id="testimonials">
 		<div class="row padding">
 			<div class="col-12 heading-section text-center mt-5">
 				<span>Testimonies</span>
