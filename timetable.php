@@ -24,7 +24,6 @@
 
 </head>
 <body>
-
     <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-center fixed-top">
         <div class="container-fluid pl-5 pr-5">	
             <a class="navbar-brand" href="index.php"><h1>STONE</h1></a>
