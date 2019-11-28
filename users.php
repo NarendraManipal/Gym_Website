@@ -44,7 +44,7 @@
                             if($_SESSION['email'] === "narendramanipal2@gmail.com" || $_SESSION['email'] === "anishsjathan@gmail.com")
                             {
                     ?>
-                    <li class="nav-item active"><a href="users.php" class="nav-link">Users</a></li>
+                    <li class="nav-item active"><a href="users.php" class="nav-link">Admin</a></li>
                     <?php
                             }
                             else

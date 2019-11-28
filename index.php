@@ -44,7 +44,7 @@
 								if($_SESSION['admin'] === true)
 								{
 						?>
-						<li class="nav-item"><a href="users.php" class="nav-link">Users</a></li>
+						<li class="nav-item"><a href="users.php" class="nav-link">Admin</a></li>
 						<?php
 								}
 								else
