@@ -1,5 +1,6 @@
 <?php
-	require 'controllers/authController.php';
+	include 'controllers/authController.php';
+	include 'controllers/pricingController.php';
 ?>
 
 <!DOCTYPE html>
@@ -26,7 +27,167 @@
 </head>
 <body>
 
-    <!-- Register modal -->
+	<!--Check for membership-->
+		<div class="modal fade" id="subscribed">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-body">
+								<h3 class="ml-5">You are already a member!!!</h3>
+								<h4 class="ml-5">Thanks for joining us.</h4>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+    <!-- Day membership modal -->
+		<div class="modal fade" id="join-modal-day">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-header">
+								<h2>One Day Membership<h2>
+								<button type="button" class="close" data-dismiss="modal"> &times; </button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-body">
+								<form action="" method="POST">
+									<div class="row">
+										<div class="col-xs-6">
+											<input class="form-control" type="text" name="mfirstname" value="<?php echo $membershipCheckValues['firstname'];?>" placeholder="Firstname" required>
+										</div>
+										<div class="col-xs-6">
+											<input class="form-control" type="text" name="mlastname" value="<?php echo $membershipCheckValues['lastname'];?>" placeholder="Lastname" required>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-12">
+											<input type="email" class="form-control" name="memail" value="<?php echo $membershipCheckValues['email'];?>" placeholder="Email" required>
+										</div>
+									</div>
+									<input class="form-control" type="phone" name="mphoneno" value="<?php echo $membershipCheckValues['phoneno'];?>" placeholder="Mobile Number" maxlength="10" required>
+									<input type="text" class="form-control" name="maddress" value="<?php echo $membershipCheckValues['address'];?>" placeholder="Address" required>
+									<div class="row">
+										<div class="col-xs 6">
+											<input type="text" class="form-control" name="mcity" value="<?php echo $membershipCheckValues['city'];?>" placeholder="City" required>
+										</div>
+										<div class="col-xs 6">
+											<input type="number" class="form-control" name="mpostal_code" value="<?php echo $membershipCheckValues['postal_code'];?>" placeholder="Postal Code" minlength="6" required>
+										</div>
+									</div>
+									<button class="btn login-primary" type="submit" name="day-membership-btn" value="signup">Submit</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Month membership modal -->
+		<div class="modal fade" id="join-modal-month">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-header">
+								<h2>One Month Membership<h2>
+								<button type="button" class="close" data-dismiss="modal"> &times; </button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-body">
+								<form action="" method="POST">
+									<div class="row">
+										<div class="col-xs-6">
+											<input class="form-control" type="text" name="mfirstname" value="<?php echo $membershipCheckValues['firstname'];?>" placeholder="Firstname" required>
+										</div>
+										<div class="col-xs-6">
+											<input class="form-control" type="text" name="mlastname" value="<?php echo $membershipCheckValues['lastname'];?>" placeholder="Lastname" required>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-12">
+											<input type="email" class="form-control" name="memail" value="<?php echo $membershipCheckValues['email'];?>" placeholder="Email" required>
+										</div>
+									</div>
+									<input class="form-control" type="phone" name="mphoneno" value="<?php echo $membershipCheckValues['phoneno'];?>" placeholder="Mobile Number" maxlength="10" required>
+									<input type="text" class="form-control" name="maddress" value="<?php echo $membershipCheckValues['address'];?>" placeholder="Address" required>
+									<div class="row">
+										<div class="col-xs 6">
+											<input type="text" class="form-control" name="mcity" value="<?php echo $membershipCheckValues['city'];?>" placeholder="City" required>
+										</div>
+										<div class="col-xs 6">
+											<input type="number" class="form-control" name="mpostal_code" value="<?php echo $membershipCheckValues['postal_code'];?>" placeholder="Postal Code" minlength="6" required>
+										</div>
+									</div>
+									<button class="btn login-primary" type="submit" name="month-membership-btn" value="signup">Submit</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Year membership modal -->
+		<div class="modal fade" id="join-modal-year">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-header">
+								<h2>One Year Membership<h2>
+								<button type="button" class="close" data-dismiss="modal"> &times; </button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-body">
+								<form action="" method="POST">
+									<div class="row">
+										<div class="col-xs-6">
+											<input class="form-control" type="text" name="mfirstname" value="<?php echo $membershipCheckValues['firstname'];?>" placeholder="Firstname" required>
+										</div>
+										<div class="col-xs-6">
+											<input class="form-control" type="text" name="mlastname" value="<?php echo $membershipCheckValues['lastname'];?>" placeholder="Lastname" required>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-12">
+											<input type="email" class="form-control" name="memail" value="<?php echo $membershipCheckValues['email'];?>" placeholder="Email" required>
+										</div>
+									</div>
+									<input class="form-control" type="phone" name="mphoneno" value="<?php echo $membershipCheckValues['phoneno'];?>" placeholder="Mobile Number" maxlength="10" required>
+									<input type="text" class="form-control" name="maddress" value="<?php echo $membershipCheckValues['address'];?>" placeholder="Address" required>
+									<div class="row">
+										<div class="col-xs 6">
+											<input type="text" class="form-control" name="mcity" value="<?php echo $membershipCheckValues['city'];?>" placeholder="City" required>
+										</div>
+										<div class="col-xs 6">
+											<input type="number" class="form-control" name="mpostal_code" value="<?php echo $membershipCheckValues['postal_code'];?>" placeholder="Postal Code" minlength="6" required>
+										</div>
+									</div>
+									<button class="btn login-primary" type="submit" name="year-membership-btn" value="signup">Submit</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Register modal -->
 		<div class="modal fade" id="join-modal">
 			<div class="modal-dialog">
 				<div class="modal-content">
@@ -162,7 +323,29 @@
                         <h2 class="heading"><p>ONE DAY TRAINING</p></h2>
                         <span class="price text-center"><sup>&#8377;</sup> <span class="number">89</span></span>
 						<span class="excerpt d-block">100% free. Forever</span>
-                        <a href="#join-modal" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-2 py-4 mb-4" name="day_submit">Get Started</a>
+						<?php
+							if(isset($_SESSION['id']))
+							{
+								if($member == "1")
+								{
+									?>
+									<a href="#subscribed" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-2 py-4 mb-4" name="day_submit">Get Started</a>
+									<?php
+								}
+								else
+								{
+									?>
+									<a href="#join-modal-day" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-2 py-4 mb-4" name="day_submit">Get Started</a>
+									<?php
+								}
+							}
+							else
+							{
+								?>
+								<a href="#login-modal" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-2 py-4 mb-4" name="day_submit">Get Started</a>
+								<?php
+							}
+						?>
                         
                         <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
                         
@@ -181,8 +364,29 @@
 						<h2 class="heading"><p>PAY EVERY MONTH</p></h2>
                         <span class="price text-center"><sup>&#8377;</sup> <span class="number">899</span></span>
                         <span class="excerpt d-block">All features are included</span>
-                        <a href="#join-modal" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-3 py-4 mb-4" name="month_submit">Get Started</a>
-                        
+                        <?php
+							if(isset($_SESSION['id']))
+							{
+								if($member == "1")
+								{
+									?>
+									<a href="#subscribed" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-2 py-4 mb-4" name="day_submit">Get Started</a>
+									<?php
+								}
+								else
+								{
+									?>
+									<a href="#join-modal-month" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-2 py-4 mb-4" name="month_submit">Get Started</a>
+									<?php
+								}
+							}
+							else
+							{
+								?>
+								<a href="#login-modal" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-2 py-4 mb-4" name="month_submit">Get Started</a>
+								<?php
+							}
+						?>
                         <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
                         
                         <ul class="pricing-text">
@@ -200,8 +404,29 @@
 						<h2 class="heading"><p>1 YEAR MEMBERSHIP</p></h2>
                         <span class="price text-center"><sup>&#8377;</sup> <span class="number">8,999</span></span>
                         <span class="excerpt d-block">All features are included</span>
-                        <a href="#join-modal" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-3 py-4 mb-4" name="year_submit">Get Started</a>
-                        
+                        <?php
+							if(isset($_SESSION['id']))
+							{
+								if($member == "1")
+								{
+									?>
+									<a href="#subscribed" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-2 py-4 mb-4" name="day_submit">Get Started</a>
+									<?php
+								}
+								else
+								{
+									?>
+									<a href="#join-modal-year" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-2 py-4 mb-4" name="year_submit">Get Started</a>
+									<?php
+								}
+							}
+							else
+							{
+								?>
+								<a href="#login-modal" data-toggle="modal" data-dismiss="modal" class="btn btn-primary d-block px-2 py-4 mb-4" name="year_submit">Get Started</a>
+								<?php
+							}
+						?>
                         <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
                         
                         <ul class="pricing-text">

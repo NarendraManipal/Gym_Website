@@ -2,6 +2,7 @@
     include 'controllers/authController.php';
     include 'controllers/usersController.php';
     include 'controllers/trainerController.php';
+    include 'controllers/pricingController.php';
 ?>
 
 <!DOCTYPE html>
@@ -184,15 +185,27 @@
                                         <th class="column100 column1">Id</th>
                                         <th class="column100 column2">Firstname</th>
                                         <th class="column100 column3">Email</th>
+                                        <th class="column100 column4">From</th>
+                                        <th class="column100 column5">To</th>
+                                        <th class="column100 column6" hidden></th>
+                                        <th class="column100 column7"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-center">
-                                    <?php while($user_content = $user_result->fetch_assoc()) 
+                                    <?php 
+                                        $cnt=1;
+                                        while($member_content = $allMember_result->fetch_assoc()) 
                                         { ?>
                                         <tr class="row100">
-                                            <td class="column100 column1"><?php echo $user_content['id']; ?></td>
-                                            <td class="column100 column2"><?php echo $user_content['firstname']." ".$user_content['lastname']; ?></td>
-                                            <td class="column100 column3"><?php echo $user_content['email']; ?></td>
+                                            <form action="" method="post">
+                                                <td class="column100 column1"><?php echo $cnt++; ?></td>
+                                                <td class="column100 column2"><?php echo $member_content['firstname']." ".$member_content['lastname']; ?></td>
+                                                <td class="column100 column3"><?php echo $member_content['email']; ?></td>
+                                                <td class="column100 column4"><?php echo $member_content['start']; ?></td>
+                                                <td class="column100 column5"><?php echo $member_content['end']; ?></td>
+                                                <td class="column100 column6" hidden><input type="hidden" name="memberToDelete" value="<?php echo $member_content['id']; ?>"></td>
+                                                <td class="column100 column7"><input class="btn btn-secondary" type="submit" name="member-delete" value="delete"></td>
+                                            </form>
                                         </tr>
                                     <?php
                                         }?>

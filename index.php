@@ -1,5 +1,6 @@
 <?php
 	include 'controllers/authController.php';
+	include 'controllers/pricingController.php';
 ?>
 
 <!DOCTYPE html>
