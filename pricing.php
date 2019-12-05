@@ -1,6 +1,7 @@
 <?php
 	include 'controllers/authController.php';
 	include 'controllers/pricingController.php';
+	include 'controllers/forgotPassword.php';
 ?>
 
 <!DOCTYPE html>
@@ -241,6 +242,37 @@
 			</div>
 		</div>
 
+		<!--Forgot password modal-->
+		<div class="modal fade" id="forgot-modal">
+			<div class="modal-dialog modal-sm">
+				<div class="modal-content">
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-header">
+								<h2>Forgot Password<h2>
+								<button type="button" class="close" data-dismiss="modal" value="&times;"></button>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<div class="modal-body">
+								<form action="" method="POST">
+									<div class="form-group">
+										<input class="form-control" type="email" placeholder="Email" name="forgot-mail" value="" maxlength="50" required><br>
+										<input class="form-control" type="phone" name="forgot-phoneno" value="" placeholder="Mobile Number" maxlength="10" required><br>
+										<input class="form-control" id="showpassword" type="password" placeholder="New password" name="forgot-password" value="" minlength="8" maxlength="15" required><br>
+										<input type="checkbox" onclick="showPassword()"><label>Show Password</label><br>
+										<button class="btn login-primary" type="submit" name="forgot-btn" value="Reset password">Reset password</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 		<!-- login modal -->
 		<div class="modal fade" id="login-modal">
 			<div class="modal-dialog modal-sm">
@@ -262,6 +294,7 @@
 										<input class="form-control" id="showpassword" type="password" placeholder="password" name="password" value="" minlength="8" maxlength="15" required><br>
 										<input type="checkbox" onclick="showPassword()"><label>Show Password</label><br>
 										<button class="btn login-primary" type="submit" name="login-btn" value="Login">Login</button>
+										<p class="forgot">Forgot password?<a href="#forgot-modal" data-toggle="modal" data-dismiss="modal">Click here</a></p>
 									</div>
 								</form>
 							</div>
@@ -296,7 +329,7 @@
     <div id="car_slides" class="carousel slide" data-ride="carousel" data-interval="7000">
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="img/bg_2.jpg">
+                <img src="img/2.jpg">
                 <div class="overlay"></div>
                 <div class="carousel-caption mt-5 pt-md-5">
                     <h1 class="mb-md-3 mt-md-5 pt-md-5 bread" data-aos="fade-up" data-aos-delay="100">Pricing</h1>
@@ -541,7 +574,7 @@
 						<ul>
 							<li><span> <img class="icon  mr-1" src="img/icon/map-marker.png" alt=""> </span><span class="text">Stone gym, Katpady, Udupi</span></li>
 							<li><span> <img class="icon mr-3" src="img/icon/phone-call.png" alt=""></span><span class="text"> +91 7411522246</span></li>
-							<li><span> <img class="icon mr-3" src="img/icon/envelope.png" alt=""></span><span class="text">info@stone.com</span></li>
+							<li><span> <img class="icon mr-3" src="img/icon/envelope.png" alt=""></span><span class="text">cse.parallax@gmail.com</span></li>
 						</ul>
 					</div>
 				</div>

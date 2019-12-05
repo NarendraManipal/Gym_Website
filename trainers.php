@@ -226,7 +226,7 @@
 						<ul>
 							<li><span> <img class="icon  mr-1" src="img/icon/map-marker.png" alt=""> </span><span class="text">Stone gym, Katpady, Udupi</span></li>
 							<li><span> <img class="icon mr-3" src="img/icon/phone-call.png" alt=""></span><span class="text"> +91 7411522246</span></li>
-							<li><span> <img class="icon mr-3" src="img/icon/envelope.png" alt=""></span><span class="text">info@stone.com</span></li>
+							<li><span> <img class="icon mr-3" src="img/icon/envelope.png" alt=""></span><span class="text">cse.parallax@gmail.com</span></li>
 						</ul>
 					</div>
 				</div>

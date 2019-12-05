@@ -117,7 +117,7 @@
                     ?>
                     <div class="row">
                         <div class="col-md-6">
-                    <input type="text" class="form-control" name="sender-name" placeholder="Your Name" <?php if(isset($_SESSION['id'])){?> value="<?php echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?>" <?php }?> required>
+                    <input type="text" class="form-control" name="sender-name" placeholder="Your Name" <?php if(isset($_SESSION['id'])){?> value="<?php echo ucwords($_SESSION['firstname']." ".$_SESSION['lastname']); ?>" <?php }?> required>
                         </div>
                         <div class="col-md-6">
                     <input type="text" class="form-control" name="sender-mail" placeholder="Your Email" <?php if(isset($_SESSION['id'])){?> value="<?php echo $_SESSION['email']; ?>" <?php } ?> required>
@@ -183,7 +183,7 @@
 						<ul>
 							<li><span> <img class="icon  mr-1" src="img/icon/map-marker.png" alt=""> </span><span class="text">Stone gym, Katpady, Udupi</span></li>
 							<li><span> <img class="icon mr-3" src="img/icon/phone-call.png" alt=""></span><span class="text"> +91 7411522246</span></li>
-							<li><span> <img class="icon mr-3" src="img/icon/envelope.png" alt=""></span><span class="text">info@stone.com</span></li>
+							<li><span> <img class="icon mr-3" src="img/icon/envelope.png" alt=""></span><span class="text">cse.parallax@gmail.com</span></li>
 						</ul>
 					</div>
 				</div>

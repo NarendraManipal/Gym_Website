@@ -26,6 +26,13 @@ button[type="submit"]:hover {
   border: 2px solid #e02626;
   color: #e02626;
 }
+.forgot{
+  font-size: 1em !important;
+}
+.forgot a {
+  text-decoration: none;
+  color: #ef5f0b;
+}
 .modal-footer {
     justify-content: center;
 }

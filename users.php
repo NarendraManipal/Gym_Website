@@ -121,18 +121,23 @@
                                     <?php 
                                         $cnt = 1;
                                         while($user_content = $user_result->fetch_assoc()) 
-                                        { ?>
-                                        <tr class="row100">
-                                            <form action="" method="post">
-                                                <td class="column100 column1"><?php echo $cnt++; ?></td>
-                                                <td class="column100 column2"><?php echo ucwords($user_content['firstname']." ".$user_content['lastname']); ?></td>
-                                                <td class="column100 column3"><?php echo $user_content['email']; ?></td>
-                                                <td class="column100 column4" hidden><input type="hidden" name="userToDelete" value="<?php echo $user_content['id']; ?>"></td>
-                                                <td class="column100 column5"><input class="btn btn-secondary" type="submit" name="user-delete" value="delete"></td>
-                                            </form>
-                                        </tr>
-                                    <?php
-                                        }?>
+                                        { 
+                                            if($user_content['email'] != "narendramanipal2@gmail.com" and $user_content['email'] != "anishsjathan@gmail.com")
+                                            {
+                                            ?>
+                                                <tr class="row100">
+                                                    <form action="" method="post">
+                                                        <td class="column100 column1"><?php echo $cnt++; ?></td>
+                                                        <td class="column100 column2"><?php echo ucwords($user_content['firstname']." ".$user_content['lastname']); ?></td>
+                                                        <td class="column100 column3"><?php echo $user_content['email']; ?></td>
+                                                        <td class="column100 column4" hidden><input type="hidden" name="userToDelete" value="<?php echo $user_content['id']; ?>"></td>
+                                                        <td class="column100 column5"><input class="btn btn-secondary" type="submit" name="user-delete" value="delete"></td>
+                                                    </form>
+                                                </tr>
+                                            <?php
+                                            }
+                                        }
+                                    ?>
                                 </tbody>
                             </table>
                         </div>
@@ -270,7 +275,7 @@
 						<ul>
 							<li><span> <img class="icon  mr-1" src="img/icon/map-marker.png" alt=""> </span><span class="text">Stone gym, Katpady, Udupi</span></li>
 							<li><span> <img class="icon mr-3" src="img/icon/phone-call.png" alt=""></span><span class="text"> +91 7411522246</span></li>
-							<li><span> <img class="icon mr-3" src="img/icon/envelope.png" alt=""></span><span class="text">info@stone.com</span></li>
+							<li><span> <img class="icon mr-3" src="img/icon/envelope.png" alt=""></span><span class="text">cse.parallax@gmail.com</span></li>
 						</ul>
 					</div>
 				</div>

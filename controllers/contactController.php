@@ -3,34 +3,40 @@
 
     if(isset($_POST['msg-submit']))
     {
-        $name = htmlspecialchars($_POST['sender-name']);
-        $mail = htmlspecialchars($_POST['sender-mail']);
-        $subject = htmlspecialchars($_POST['subject']);
-        $message = htmlspecialchars($_POST['message-body']);
+        $contact_name = htmlspecialchars($_POST['sender-name']);
+        $contact_mail = htmlspecialchars($_POST['sender-mail']);
+        $contact_subject = htmlspecialchars($_POST['subject']);
+        $contact_message = htmlspecialchars($_POST['message-body']);
 
-        $headers = "From: " . strip_tags($_POST['sender-mail']) . "\r\n";
-        $headers .= "Reply-To: ". strip_tags($_POST['sender-mail']) . "\r\n";
-        $headers .= "CC: cse.parallax@gmail.com\r\n";
-        $headers .= "MIME-Version: 1.0\r\n";
-        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+        require 'phpmailer\PHPMailerAutoload.php';
+        require 'config\credentials.php';
 
-        //message body construction
-        $hsubject = $name.": ".$subject;
-        $bname = "<h4>Name:  </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$name;
-        $bmail = "<h4>Email:  </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$mail;
-        $bmessage = "<h4>Query:  </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;".$message;
+        $mail = new PHPMailer;
 
+        //$mail->SMTPDebug = 4;                               // Enable verbose debug output
 
-        $body = "<br>".$bname." ".$bmail."<br>".$bmessage;
-        
-        
-        if(mail('cse.parallax@gmail.com', $hsubject, $body, $headers))
-        {
+        $mail->isSMTP();                                      // Set mailer to use SMTP
+        $mail->Host = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
+        $mail->SMTPAuth = true;                               // Enable SMTP authentication
+        $mail->Username = EMAIL;                 // SMTP username
+        $mail->Password = PASS;                           // SMTP password
+        $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
+        $mail->Port = 587;                                    // TCP port to connect to
+
+        $mail->setFrom(EMAIL, 'Stone Gym: '.$contact_name);
+        $mail->addAddress(EMAIL);              // Name is optional
+        $mail->addReplyTo(EMAIL);
+         // Add attachments
+        //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
+        $mail->isHTML(true);                                  // Set email format to HTML
+
+        $mail->Subject = $contact_name.': '.$contact_subject;
+        $mail->Body = '<b>Name: </b>'.$contact_name.'<br><br><b>Email: </b>'.$contact_mail.'<br><br><b>Message: </b><br>'.$contact_message;
+
+        if(!$mail->send()) {
+            $success = "Failure";
+        } else {
             $success = "Success";
-        }
-        else
-        {
-            $success = "Failed";
         }
     }
 
