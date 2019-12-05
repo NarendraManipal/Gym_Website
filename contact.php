@@ -117,10 +117,10 @@
                     ?>
                     <div class="row">
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="sender-name" placeholder="Your Name" value="<?php echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?>" required>
+                    <input type="text" class="form-control" name="sender-name" placeholder="Your Name" <?php if(isset($_SESSION['id'])){?> value="<?php echo $_SESSION['firstname']." ".$_SESSION['lastname']; ?>" <?php }?> required>
                         </div>
                         <div class="col-md-6">
-                            <input type="text" class="form-control" name="sender-mail" placeholder="Your Email" value="<?php echo $_SESSION['email']; ?>" required>
+                    <input type="text" class="form-control" name="sender-mail" placeholder="Your Email" <?php if(isset($_SESSION['id'])){?> value="<?php echo $_SESSION['email']; ?>" <?php } ?> required>
                         </div>
                     </div>
                     <input type="text" class="form-control" name="subject" placeholder="Subject" required>
